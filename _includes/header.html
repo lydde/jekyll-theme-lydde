@@ -1,0 +1,96 @@
+{%- assign company = authors.default.name | default: site.title | escape -%}
+{%- assign logo = site.logo | default: "/assets/lydde.png" | absolute_url -%}
+
+{%- assign menus = site.settings.menus.header | default: site.data.settings.menus.header -%}
+{%- assign social = site.settings.social | default: site.data.settings.social -%}
+
+<header id="header">
+    <div class="container">
+        
+        <!-- Header Top: Social Network -->
+        {%- if social -%}
+        <div id="header-top">
+            <div class="d-lg-none spacer">&nbsp;</div>
+            <div class="d-none d-lg-block">
+            <!-- Social Network -->
+            {% include social.html class="nav justify-content-end" %}
+            </div>
+        </div>
+        {%- endif -%}
+
+        <!-- Header Main: Site Menu -->
+        <nav id="header-main" class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <div id="logo" class="navbar-brand">
+                    <a href="{{ "/" | absolute_url }}" title="{{ company }}" rel="author">
+                        <img src="{{ logo }}" alt="{{ company }}">
+                    </a>
+                </div>
+
+                <!-- Responsive Toggle Button -->
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarContent" 
+                    aria-controls="navbarContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation -->
+                <div id="navbarContent" class="collapse navbar-collapse p-2 pt-5 p-lg-0">
+                {% if menus %}
+                    {% for menu in menus %}
+                    <!-- Site -->
+                    <div id="{{ menu.title | slugify }}" {% if menu.position == "left" %}class="me-auto"{% endif %}>
+                        <ul class="navbar-nav nav-pills">
+                            {% for item in menu.links %}
+                            <li class="nav-item">
+                                <a class="nav-link px-3{%- if page.url == item.link -%} active{%- endif -%}" 
+                                {%- if page.url == item.link -%}aria-current="page"{%- endif -%} 
+                                href="{{ item.link | absolute_url }}" 
+                                title="{{ item.title }}">
+                                {%- if item.icon -%}<i class="{{ item.icon }}"></i>{%- endif -%}{{ item.title | escape }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                {% else %}
+                    <!-- Default Navigation -->
+                    <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                        <li>
+                            <a class="nav-link" href="{{ "/" | absolute_url }}" title="Home">Home</a>
+                        </li>
+                    {%- assign paths = site.pages | map: "path" -%}
+                    {%- for path in paths -%}
+                    {%- assign item = site.pages | where: "path", path | first -%}
+                    {%- if item.title and item.path contains "resources/pages" -%}
+                        <li>
+                            <a class="nav-link" href="{{ item.url | absolute_url }}" title="{{ item.title }}">{{item.title}}</a>
+                        </li>
+                    {%- endif -%}
+                    {%- endfor -%}
+                    </ul>
+                {% endif %}
+                {%- if social -%}
+                    <hr />
+                    <!-- Social Network -->
+                    <div class="d-lg-none border-top">
+                        <h4>Follow us</h4>
+                        {% include social.html class="nav justify-content-center" %}
+                    </div>
+                {%- endif -%}
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Header Bottom -->
+        <div id="header-bottom"></div>
+    </div>
+</header>

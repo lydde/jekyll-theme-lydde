@@ -1,1 +1,30 @@
-{{ content }}
+{%- assign language = page.language | default: site.language | default: "en" -%}
+
+<!doctype html>
+<html 
+    lang="{{ language }}" 
+    data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta 
+            name="viewport"
+            content="width=device-width, initial-scale=1">
+
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="{{ "/assets/styles/main.css" | absolute_url }}">
+
+    </head>
+    <body class="mx-auto p-4 py-md-5">
+        <a href="#main" class="visually-hidden">Skip to main content</a>
+        <!-- Header -->
+        {%- include header.html -%}
+        <!-- Content -->
+        <main class="container">
+            {{ content }}
+        </main>
+        <!-- Footer -->
+        {%- include footer.html -%}
+        <!-- Scripts -->
+        {%- include scripts.html -%}
+    </body>
+</html>

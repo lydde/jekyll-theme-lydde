@@ -1,0 +1,63 @@
+{%- assign company = authors.default.name | default: site.title | escape -%}
+
+{%- assign menus = site.settings.menus.footer | default: site.data.settings.menus.footer -%}
+{%- assign social = site.settings.social| default: site.data.settings.social -%}
+{%- assign authors = site.authors | default: site.data.authors -%}
+
+
+{%- if page.footer != false -%}
+<footer id="footer" class="border-top text-muted">
+    <div class="container">
+        <!-- Footer Top -->
+        <div id="footer-top"></div>
+
+        <!-- Footer Main-->
+        {% if social or menus %}
+        <div id="footer-main" class="row pt-3 border-bottom">
+            {% if social %}
+            <!-- Social Media -->
+            <div id="social" class="col-sm-12 col-lg-6">
+                <h2 class="h5">Let's Connect</h2>
+                <p>Follow us on your favorite platform</p>
+                <div>
+                    {% include social.html class="nav pb-3" %}
+                </div>
+            </div>
+            {% endif %}
+            {% if menus %}
+                <!-- Links -->
+                {%- for menu in menus -%}
+                <div id="{{ menu.title | slugify }}" class="col-lg-3 col-sm-6">
+                    <h2 class="h5">{{ menu.title }}</h2>
+                    <div>
+                        <ul class="nav flex-column pb-3">
+                            {% for item in menu.links %}
+                            <li class="nav-item mb-2">
+                                <a class="nav-link p-0 text-muted" href="{{ item.link | absolute_url }}" title="{{ menu.title }}: {{ item.title }}">{{ item.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {%- endfor -%}
+            {%- endif -%}
+        </div>
+        {% endif %}
+
+        <!-- Footer Bottom: Website information -->
+        <div id="footer-bottom">
+            <div class="row py-3">
+                <div id="copyright" class="col-sm-6">
+                    <p>&copy; Copyright {{ "now" | date: "%Y" }}{%- if company -%} - {{ company }}{%- endif -%}</p>
+                </div>
+                <div id="disclaimer" class="col-sm-6 text-center text-lg-end">
+                    <a href="https://lydde.com">
+                        <img src="{{ "/assets/lydde.png" | absolute_url }}"
+                             alt="{%- if company -%}{{ company }} is {%- endif -%}a subsidiary of LYDDE Group">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{%- endif -%}
