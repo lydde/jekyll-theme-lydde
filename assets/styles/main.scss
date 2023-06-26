@@ -4,7 +4,19 @@
 # this ensures Jekyll reads the file to be transformed into CSS later
 # only Main files contain this front matter, not partials.
 ---
+
+//
+// Theme Customization
+//
+@import "variables";
+
 //
 // Bootstrap 5.3.0
 //
 @import "bootstrap/bootstrap";
+
+//
+// Jekyll Theme
+//
+@import "code";
+@import "website";

@@ -1,9 +1,16 @@
-{%- assign company = authors.default.name | default: site.title | escape -%}
-{%- assign logo = site.logo | default: "/assets/lydde.png" | absolute_url -%}
+{%- assign company = authors.default.name | site.title | default: "THEME" | escape -%}
+{%- assign logo = site.logo | default: "/assets/logo.png" | absolute_url -%}
+
+{%- for files in site.static_files -%}
+    {%- if files.path == logo -%}
+        {%- assign logoExist = true -%}
+    {%- endif -%}
+{%- endfor -%}
 
 {%- assign menus = site.settings.menus.header | default: site.data.settings.menus.header -%}
 {%- assign social = site.settings.social | default: site.data.settings.social -%}
 
+{%- if page.header != false -%}
 <header id="header">
     <div class="container">
         
@@ -21,12 +28,17 @@
         <!-- Header Main: Site Menu -->
         <nav id="header-main" class="navbar navbar-expand-lg">
             <div class="container-fluid">
+                {%- if logoExist -%}
                 <!-- Logo -->
                 <div id="logo" class="navbar-brand">
                     <a href="{{ "/" | absolute_url }}" title="{{ company }}" rel="author">
                         <img src="{{ logo }}" alt="{{ company }}">
                     </a>
                 </div>
+                {%- else -%}
+                <!-- Brand -->
+                <span id="brand" class="navbar-brand mb-0 h1">{{ company }}</span>
+                {%- endif -%}
 
                 <!-- Responsive Toggle Button -->
                 <button 
@@ -42,7 +54,7 @@
 
                 <!-- Navigation -->
                 <div id="navbarContent" class="collapse navbar-collapse p-2 pt-5 p-lg-0">
-                {% if menus %}
+                {%- if menus -%}
                     {% for menu in menus %}
                     <!-- Site -->
                     <div id="{{ menu.title | slugify }}" {% if menu.position == "left" %}class="me-auto"{% endif %}>
@@ -61,23 +73,36 @@
                     </div>
                     <hr />
                     {% endfor %}
-                {% else %}
+                {%- else -%}
                     <!-- Default Navigation -->
                     <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-                        <li>
-                            <a class="nav-link" href="{{ "/" | absolute_url }}" title="Home">Home</a>
-                        </li>
                     {%- assign paths = site.pages | map: "path" -%}
                     {%- for path in paths -%}
+                        {%- assign item = site.pages | where: "path", path | first -%}
+                        {%- if item.title and item.path contains "resources/pages" -%}
+                            {%- assign resources = true -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    {%- for path in paths -%}
                     {%- assign item = site.pages | where: "path", path | first -%}
-                    {%- if item.title and item.path contains "resources/pages" -%}
+                    {%- if resources == true -%}
+                        {%- if item.title and item.path contains "resources/pages" -%}
                         <li>
                             <a class="nav-link" href="{{ item.url | absolute_url }}" title="{{ item.title }}">{{item.title}}</a>
                         </li>
+                        {%- endif -%}
+                    {%- else -%}
+                        {%- unless item.title and item.path contains "resources" -%}
+                        <li>
+                            <a class="nav-link" href="{{ item.url | absolute_url }}" title="{{ item.title }}">{{item.title}}</a>
+                        </li>
+                        {%- endunless -%}
                     {%- endif -%}
                     {%- endfor -%}
                     </ul>
-                {% endif %}
+                {%- endif -%}
                 {%- if social -%}
                     <hr />
                     <!-- Social Network -->
@@ -94,3 +119,4 @@
         <div id="header-bottom"></div>
     </div>
 </header>
+{%- endif -%}

@@ -1,0 +1,19 @@
+---
+permalink: "/browserconfig.xml"
+layout: null
+---
+{%- assign theme = site.settings.theme -%}
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+          <square70x70logo src="{{"/assets/icons/mstile-70x70.png" | absolute_url }}" />
+          <square150x150logo src="{{"/assets/icons/mstile-150x150.png" | absolute_url}}"/>
+          <square310x310logo src="{{"/assets/icons/mstile-310x310.png" | absolute_url}}" />
+          <wide310x150logo src="{{"/assets/icons/mstile-310x150.png" | absolute_url}}" />
+          {% if theme.color.primary %}
+          <TileColor>{{ theme.color.primary }}</TileColor>
+          {% endif %}
+        </tile>
+    </msapplication>
+</browserconfig>

@@ -1,0 +1,29 @@
+/*
+ * LYDDE Group - Jekyll Bootstrap Theme
+ * Copyright 2011-2023 YAKA Game Studio
+ * Copyright 2011-2023 The Bootstrap Authors
+ * Copyright 2011-2023 Twitter, Inc.
+ *
+ * Theme variables
+ *
+ */
+
+//
+// Color system
+//
+$primary: #6f42c1;
+$secondary: #ffc107;
+
+//
+// Icons
+//
+$fa-font-path: "../fonts";
+
+//
+// Fonts
+//
+$web-font-path: "https://fonts.googleapis.com/css2?family=Basic&family=Jockey+One&display=swap";
+@import url($web-font-path);
+
+$font-family-base: 'Basic', sans-serif;
+$headings-font-family: 'Jockey One', sans-serif;

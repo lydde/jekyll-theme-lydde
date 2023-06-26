@@ -1,5 +1,35 @@
 ---
 layout: default
 ---
+{% assign item = page %}
+<div class="row">
+    <section class="col-lg-9 mb-2 mb-sm-0 pb-sm-5">
+        <header>
+            <div class="border-bottom py-3 mb-3 row">
+                <div class="col-12 col-sm-6">
+                    {% include info.html %}
+                </div>
+                <div class="col py-3 py-sm-0">
+                    {% include post-author.html format="list" class="nav justify-content-md-end" %}
+                </div>
 
-{{ content }}
+            </div>
+        </header>
+        <main id="main-content" data-bs-spy="scroll" data-bs-target="#tocScrollSpy" data-bs-offset="0" tabindex="0">
+            <article>{{ content }}</article>
+        </main>
+        <footer>
+            {%- include post-share.html -%}
+            {%- include post-author.html -%}
+        </footer>
+    </section>
+    <aside class="col-lg-3">
+        <section>
+        </section>
+        <section class="sticky-top pt-3">
+            {%- include post-categories.html -%}
+            {%- include post-tags.html -%}
+            {%- include post-toc.html title="Content" html=content id="tocScrollSpy" class="nav nav-pills flex-column" item_class="nav-item" anchor_class="nav-link" submenu_class="nav flex-column"  -%}
+        </section>
+    </aside>
+</div>
