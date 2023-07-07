@@ -1,0 +1,15 @@
+{% assign date = item.date | default: "now" | date_to_string %}
+{% assign duration = item.content | number_of_words | divided_by: 180 %}
+{% unless duration != 0 %}
+  {% assign duration = 1 %}
+{% endunless %}
+
+<ul class="nav">
+  <li class="nav-item mx-1 badge bg-secondary py-2">
+    <i class="far fa-clock"></i>
+    {{ duration }} min read
+  </li>
+  <li class="nav-item mx-1 badge bg-secondary py-2">
+    <i class="far fa-calendar"></i>&nbsp;<time datetime="{{ date }}">{{ date }}</time>
+  </li>
+</ul>

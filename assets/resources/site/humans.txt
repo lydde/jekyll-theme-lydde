@@ -1,25 +1,31 @@
 ---
-permalink: "/humans.txt"
 layout: null
+permalink: "/humans.txt"
 ---
+{%- assign company = authors.default.name | default: site.title | escape  -%}
 {%- assign social = site.settings.social -%}
-Site Name:      {{ site.title }}
-{{ site.description }}
-{% if social %}
-***
-Social Information
-{%- for item in social -%}
-{%- assign key = item | first -%}
-{%- if social[key].link -%}
-{{ social[key].title | default: key | capitalize }}:       {{ social[key].link }}{{ social[key].username }}
-{% endif %}
-{%- endfor -%}
+
+{% if company %}
+    Site: {{ company }}
+    {{ site.description }}
+    {% if social %}
+    ***
+    Social Information
+        {%- for item in social -%}
+        {%- assign key = item | first -%}
+            {%- if social[key].link -%}
+            {{ social[key].title | default: key | capitalize }}:       {{ social[key].link }}{{ social[key].username }}
+            {% endif %}
+        {%- endfor -%}
+    {% endif %}
+{% else %}
+This site is not fully setup
 {% endif %}
 ***
 Technical information
 Website:        {{ site.url }}
 Last update:    {{ site.time }}
 Standards:      HTML5, CSS3, Javascript
-Components:     Bootstrap, Fontawsome, Jekyll
+Components:     Bootstrap 3.5.0, Jekyll
 Software:       GitHub / Visual Studio Code
 Hosting:        GitHub Pages

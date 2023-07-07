@@ -16,14 +16,18 @@
     <body>
         <a href="#main" class="visually-hidden">Skip to main content</a>
         <!-- Header -->
-        {%- include header.html -%}
+        {%- include header.liquid -%}
         <!-- Content -->
         <main class="container">
+            <!-- Page Title -->
+            <H1 class="pt-5">{{ page.title }}</H1>
+            <!-- Breadcrumbs -->
+            {% include breadcrumb.liquid %}
             {{ content }}
         </main>
         <!-- Footer -->
-        {%- include footer.html -%}
+        {%- include footer.liquid -%}
         <!-- Scripts -->
-        {%- include scripts.html -%}
+        {%- include scripts.liquid -%}
     </body>
 </html>

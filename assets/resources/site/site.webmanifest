@@ -1,11 +1,14 @@
 ---
-permalink: "/site.webmanifest"
 layout: null
+permalink: "/site.webmanifest"
 ---
+{%- assign company = authors.default.name | default: site.title | escape -%}
 {%- assign theme = site.settings.theme -%}
 {
-  "name": "{{ site.title }}",
-  "short_name": "{{ site.title }}",
+  "name": "{{ company }}",
+  "short_name": "{{ company }}",
+  "description": "{{ site.description }}",
+  "start_url": "{{ site.url }}",
   "icons": [
     {
       "src": "{{"/assets/icons/android-chrome-192x192.png" | absolute_url }}",

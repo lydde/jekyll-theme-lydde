@@ -1,0 +1,36 @@
+---
+layout: page
+permalink: "/sitemap.html"
+---
+
+<!-- Pages -->
+{% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html"' %}
+{%- if pages -%}
+## Pages
+<ul>
+{%- for page in pages -%}
+    {%- if page.title -%}
+    <li>
+        <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">{{ page.title }}</a>
+    </li>
+    {%- endif -%}
+{%- endfor -%}
+</ul>
+{%- endif -%}
+
+<!-- Collections -->
+{% assign collections = site.collections | where_exp:'collection','collection.output != false' %}
+{%- if collections -%}
+## Collections
+{% for collection in collections %}
+<h3>{{ collection.label | capitalize }}</h3>
+  {% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
+  <ul>
+  {% for doc in docs %}
+    <li>
+        <a href="{{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }}" title="{{ doc.title }}">{{ doc.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+{%- endif -%}

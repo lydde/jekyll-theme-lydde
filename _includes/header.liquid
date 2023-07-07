@@ -1,14 +1,14 @@
-{%- assign company = authors.default.name | site.title | default: "THEME" | escape -%}
-{%- assign logo = site.logo | default: "/assets/logo.png" | absolute_url -%}
+{%- assign company = authors.default.name | site.title | default: 'Theme' | escape -%}
+{%- assign menus = site.settings.menus.header | default: site.data.settings.menus.header -%}
+{%- assign social = site.settings.social | default: site.data.settings.social -%}
 
+{%- assign logo = site.logo | default: "/assets/logo.png" -%}
 {%- for files in site.static_files -%}
     {%- if files.path == logo -%}
         {%- assign logoExist = true -%}
+        {%- break -%}
     {%- endif -%}
 {%- endfor -%}
-
-{%- assign menus = site.settings.menus.header | default: site.data.settings.menus.header -%}
-{%- assign social = site.settings.social | default: site.data.settings.social -%}
 
 {%- if page.header != false -%}
 <header id="header">
@@ -31,13 +31,13 @@
                 {%- if logoExist -%}
                 <!-- Logo -->
                 <div id="logo" class="navbar-brand">
-                    <a href="{{ "/" | absolute_url }}" title="{{ company }}" rel="author">
-                        <img src="{{ logo }}" alt="{{ company }}">
+                    <a id="brand" href="{{ '/'' | absolute_url }}" title="{{ company }}" rel="author">
+                        <img src="{{ logo | absolute_url }}" alt="{{ company }}">
                     </a>
                 </div>
                 {%- else -%}
                 <!-- Brand -->
-                <span id="brand" class="navbar-brand mb-0 h1">{{ company }}</span>
+                <a id="brand" href="{{ '/' | absolute_url }}" title="{{ company }}" rel="author" class="navbar-brand">{{ company }}</a>
                 {%- endif -%}
 
                 <!-- Responsive Toggle Button -->
@@ -57,7 +57,7 @@
                 {%- if menus -%}
                     {% for menu in menus %}
                     <!-- Site -->
-                    <div id="{{ menu.title | slugify }}" {% if menu.position == "left" %}class="me-auto"{% endif %}>
+                    <div id="{{ menu.title | slugify }}" {% if menu.position == 'left' %}class="me-auto"{% endif %}>
                         <ul class="navbar-nav nav-pills">
                             {% for item in menu.links %}
                             <li class="nav-item">
@@ -94,10 +94,12 @@
                         </li>
                         {%- endif -%}
                     {%- else -%}
-                        {%- unless item.title and item.path contains "resources" -%}
+                        {%- unless item.path contains "resources" -%}
+                        {%- if item.title and item.layout == "page" -%}
                         <li>
                             <a class="nav-link" href="{{ item.url | absolute_url }}" title="{{ item.title }}">{{item.title}}</a>
                         </li>
+                        {%- endif -%}
                         {%- endunless -%}
                     {%- endif -%}
                     {%- endfor -%}

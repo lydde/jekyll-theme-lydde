@@ -1,5 +1,5 @@
 ---
-# LYDDE Group - Jekyll Bootstrap Theme
+# LYDDE Group - Jekyll & Bootstrap Theme
 # Version 1.0.0
 # this ensures Jekyll reads the file to be transformed into CSS later
 # only Main files contain this front matter, not partials.
@@ -19,4 +19,5 @@
 // Jekyll Theme
 //
 @import "code";
+@import "html";
 @import "website";

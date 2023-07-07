@@ -1,0 +1,13 @@
+{%- assign categories = page.categories -%}
+{%- if categories.size > 0 -%}
+  <div id="categories">
+    <h5>Categories</h5>
+    <ul class="d-grid p-0 pt-3">
+      {%- for category in categories -%}
+        <li class="btn btn-primary mb-1 text-start h5">
+          {{ category }}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}

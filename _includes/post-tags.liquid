@@ -1,0 +1,16 @@
+{%- assign tags = page.tags -%}
+{%- if tags.size > 0 -%}
+  <div id="tags">
+    <h5>Tags</h5>
+    <ul class="nav py-3">
+      {%- for tag in tags -%}
+        <li class="nav-item mx-1">
+          <a
+            href="{{ tag | slugify | prepend: "/tags#" | absolute_url }}"
+            title="{{ tag }}"
+            class="btn btn-outline-primary btn-sm mb-1">{{ tag | prepend: '#' }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}

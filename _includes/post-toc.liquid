@@ -1,0 +1,86 @@
+{% capture workplace %}
+  {% assign title = include.title | default: 'ToC' %}
+  {% assign minLevel = include.min | default: 1 %}
+  {% assign maxLevel = include.max | default: 6 %}
+
+  {% assign listNav = 'nav' %}
+
+  {% assign levelNavClass = "nav nav-pills flex-column" %}
+
+
+  {% capture toc %}{% endcapture %}
+
+  {% assign currentLevel = 0 %}
+
+  {% assign nodes = include.html | strip | split: '<h' %}
+  {% assign nodesCount = nodes.count %}
+
+  {% for node in nodes %}
+    {% unless node != empty %}
+      {% continue %}
+    {% endunless %}
+
+    {% assign currentLevel = node | slice: 0, 1 | times: 1 %}
+
+    {% if currentLevel < minLevel or currentLevel > maxLevel %}
+      {% continue %}
+    {% endif %}
+
+    {% assign _workspace = node | split: '</h' %}
+
+    {% assign tocId = _workspace[0] | split: 'id="' %}
+    {% assign tocId = tocId[1] | split: '"' %}
+    {% assign tocId = tocId[0] %}
+
+    {% assign tocTitle = _workspace[0] | split: '>' %}
+    {% assign tocTitle = tocTitle[1] %}
+
+    {% capture tocLink %}
+      <a class="nav-link" href="{{ tocId | prepend: '#' }}" >{{ tocTitle }}</a>
+    {% endcapture %}
+
+    {% if firstLevel >= currentLevel or firstLevel == nil %}
+      {% assign firstLevel = currentLevel %}
+    {% endif %}
+
+    {% if lastLevel <= currentLevel or lastLevel == nil %}
+      {% assign lastLevel = currentLevel %}
+    {% endif %}
+
+
+
+    {% capture toc %}
+      {{ toc }}
+
+      {% if currentLevel > previousLevel %}
+        <nav class="nav nav-pills flex-column ms-{{ currentLevel }}">
+      {% endif %}
+      {% if currentLevel < previousLevel %}
+      </nav>
+      {% endif %}
+      {{ tocLink }}
+      {% if forloop.last %}
+      </nav>
+      {% endif %}
+    {% endcapture %}
+
+
+    {% assign previousLevel = currentLevel %}
+  {% endfor %}
+
+    <nav id="tocSpyScroll" class="flex-column align-items-stretch">
+        <nav class="nav nav-pills flex-column">
+            {{ toc }}
+        </nav>
+    </nav>
+
+{% endcapture %}
+
+
+
+<div id="toc">
+  {% if title %}
+    <h5>{{ title }}</h5>
+  {% endif %}
+  {{ workplace }}
+</div>

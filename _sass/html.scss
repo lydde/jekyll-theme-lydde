@@ -1,0 +1,26 @@
+/*
+ * LYDDE Group - Jekyll & Bootstrap Theme
+ * Copyright 2011-2023 YAKA Game Studio
+ * Copyright 2011-2023 The Bootstrap Authors
+ * Copyright 2011-2023 Twitter, Inc.
+ *
+ */
+
+/*
+    Reuse Bootstrap to HTML Object
+*/
+table {
+    @extend .table;
+    @extend .table-hover; 
+}
+tfoot {
+    @extend .table-group-divider;
+}
+
+blockquote {
+    @extend .blockquote; 
+}
+
+img {
+    @extend .img-fluid;
+}

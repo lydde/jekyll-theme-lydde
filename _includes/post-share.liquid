@@ -1,0 +1,26 @@
+{%- assign share = page.share | default: site.share -%}
+{%- assign social = site.settings.share | default: site.data.settings.share -%}
+
+{%- if social.size > 0 and share != false -%}
+  <div id="share" class="border-top py-3 my-3">
+    <p class="h6 text-center">Share (for immortality)</p>
+    <div>
+      <ul class="nav justify-content-center">
+        {% for item in social %}
+          {%- assign key = item | first -%}
+          {%- assign value = item | last -%}
+          <li class="nav-item border-bottom border-5 border-primary mx-1">
+            <a
+              class="nav-link link-primary"
+              href="{{ value }}{{ page.url | absolute_url }}"
+              aria-label="{{ key }}"
+              rel="noopener"
+              title="Share {{ page.title }} on {{ key | capitalize }}">
+              <i class="fab fa-{{ key | downcase }}"></i>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{%- endif -%}

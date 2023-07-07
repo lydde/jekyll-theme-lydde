@@ -1,5 +1,4 @@
 {%- assign company = authors.default.name | default: site.title | escape -%}
-
 {%- assign menus = site.settings.menus.footer | default: site.data.settings.menus.footer -%}
 {%- assign social = site.settings.social| default: site.data.settings.social -%}
 
@@ -50,7 +49,7 @@
                 </div>
                 <div id="disclaimer" class="col-sm-6 text-center text-lg-end">
                     <a href="https://lydde.com">
-                        <img src="{{ "/assets/lydde.png" | absolute_url }}"
+                        <img src="{{ '/assets/lydde.png' | absolute_url }}"
                              alt="{%- if company -%}{{ company }} is {%- endif -%}a subsidiary of LYDDE Group">
                     </a>
                 </div>

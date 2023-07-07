@@ -1,0 +1,59 @@
+{% assign authors = page.author %}
+{% assign directory = site.authors | default: site.data.authors %}
+{% if directory %}
+  {%- if authors.size > 0 -%}
+    {%- if include.format == "list" -%}
+      <ul class="{{ include.class }}">
+        {%- for author in authors -%}
+          <li class="nav-item mx-1 badge bg-secondary py-2">
+            by
+            <a href="{{ directory[author].url | default: "#author" }}" class="text-reset btn-link">{{ directory[author].name | default: authors }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      {%- for people in authors limit: 1 -%}
+        {% assign author = directory[people] %}
+          <div id="author" class="d-flex p-2 p-md-4 my-3 bg-dark bg-opacity-25 rounded">
+          <!-- Avatar -->
+          <div class="me-2 me-md-4">
+            <img
+              class="rounded-circle"
+              src="{{ author.picture | default: site.logo | absolute_url }}"
+              alt="{{ author.name | append: ' avatar' }}"
+              width="100">
+          </div>
+          <!-- Information -->
+          <div class="flex-fill">
+            <div class="d-sm-flex align-items-center justify-content-between">
+              <div>
+                <h4 class="m-0">{{ author.name }}</h4>
+                <small>{{ author.position }}</small>
+              </div>
+            </div>
+            <p class="my-2">{{ author.content | default: author.description }}</p>
+            <!-- Social icons -->
+            {% assign social = author.social %}
+            {%- if social -%}
+              <ul class="nav">
+                {%- for item in social -%}
+                  {%- assign key = item | first -%}
+                  {% if social[key].link %}
+                    <li class="nav-item">
+                      <a
+                        class="nav-link ps-0 pe-2 fs-5"
+                        href="{{ social[key].link }}"
+                        title="Follow us on {{ social[key].title | default: key | capitalize }}">
+                        <i class="fab fa-{{ key | downcase }}"></i>
+                      </a>
+                    </li>
+                  {% endif %}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+{% endif %}

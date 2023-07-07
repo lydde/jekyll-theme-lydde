@@ -1,0 +1,26 @@
+{% assign pages = site.pages | where_exp: 'doc', 'doc.url != "/404.html"' | where_exp: 'doc', 'doc.title' %}
+{% assign i = 1 %}
+
+<ul>
+  {%- for page in pages -%}
+
+    {% assign crumbs = page.url | remove: '/index.html' | split: '/' %}
+    {% assign size = crumbs | size | minus: 1 %}
+
+    {% assign orderedPages = crumbs[i] | group %}
+    {{ crumbs[i] }}
+
+
+    {% capture myLoop %}
+      <li>{{ page.title }} - {{ size }} - {{ page.url }}</li>
+    {% endcapture %}
+
+
+    {% for crumb in crumbs %}
+      {% unless crumb == "" %}
+        {{ myLoop }}
+      {% endunless %}
+    {% endfor %}
+
+  {%- endfor -%}
+</ul>
