@@ -1,4 +1,4 @@
-# Lydde Group - Boostrap Theme for Jekyll
+# Lydde Group - Boostrap 5.3 Theme for Jekyll
 
 Theme for all Lydde Group GitHub Sites based on Jekyll & Bootstrap 5.3.0
 
