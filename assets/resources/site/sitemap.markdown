@@ -21,9 +21,8 @@ permalink: "/sitemap.html"
 <!-- Collections -->
 {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}
 {%- if collections -%}
-## Collections
 {% for collection in collections %}
-<h3>{{ collection.label | capitalize }}</h3>
+<h2>{{ collection.label | capitalize }}</h2>
   {% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
   <ul>
   {% for doc in docs %}

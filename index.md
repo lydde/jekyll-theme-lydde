@@ -1,8 +1,7 @@
 ---
-title: Welcome
+title: Welcome to Jekyll Bootstrap Theme
 layout: home
 ---
-# Welcome to Jekyll Bootstrap Theme
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum sed arcu non odio. Sapien et ligula ullamcorper malesuada proin. Eget est lorem ipsum dolor sit amet consectetur adipiscing. Blandit turpis cursus in hac habitasse platea. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Hac habitasse platea dictumst quisque sagittis purus sit. Donec pretium vulputate sapien nec. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pharetra magna ac placerat vestibulum lectus. Arcu vitae elementum curabitur vitae nunc sed.
 
 Odio morbi quis commodo odio aenean sed adipiscing diam donec. Aliquet porttitor lacus luctus accumsan tortor posuere. Molestie nunc non blandit massa enim nec dui nunc mattis. Vel turpis nunc eget lorem. Sit amet volutpat consequat mauris nunc congue nisi. Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Ipsum faucibus vitae aliquet nec ullamcorper. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu. Sit amet est placerat in egestas erat imperdiet sed. Vel risus commodo viverra maecenas accumsan. Dui sapien eget mi proin sed libero enim sed faucibus. Metus vulputate eu scelerisque felis. Suspendisse in est ante in nibh mauris cursus mattis.
