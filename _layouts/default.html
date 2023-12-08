@@ -8,13 +8,16 @@
         <meta 
             name="viewport"
             content="width=device-width, initial-scale=1">
+        
+        {% if jekyll.environment == 'production' %}
+        {%- include seo.liquid -%}
+        {% endif %}
 
         <!-- Style -->
         <link rel="stylesheet" type="text/css" href="{{ "/assets/styles/main.css" | absolute_url }}">
         
-        {% if jekyll.environment == 'production' %}
+
         {%- include analytics.liquid -%}
-        {% endif %}
         
     </head>
     <body>
