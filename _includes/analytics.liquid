@@ -1,11 +1,12 @@
-{% if site.settings.analytics %}
+{%- assign analytics = site.data.settings.analytics | default: site.analytics -%}
+{% if analytics %}
 <!-- Global Google Site Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.settings.analytics }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '{{ site.settings.analytics }}');
+  gtag('config', '{{ analytics }}');
 </script>
 {% endif %}

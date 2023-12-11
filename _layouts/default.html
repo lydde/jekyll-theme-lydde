@@ -16,8 +16,9 @@
         <!-- Style -->
         <link rel="stylesheet" type="text/css" href="{{ "/assets/styles/main.css" | absolute_url }}">
         
-
+        {% if jekyll.environment == 'production' %}
         {%- include analytics.liquid -%}
+        {% endif %}
         
     </head>
     <body>
