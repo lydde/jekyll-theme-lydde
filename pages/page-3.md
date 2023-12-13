@@ -5,7 +5,7 @@ excerpt: My dummy page with lot of content
 url: /demo/url/cheatsheet.html
 author: author-1
 image: /assets/images/news.jpeg
-trailer: /assets/videos/3851147.mp4
+trailer: /assets/videos/demo.mp4
 ---
 ## Headings
 

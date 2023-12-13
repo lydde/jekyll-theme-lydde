@@ -1,4 +1,21 @@
+{%- comment -%} 
+    Default layout for all pages in the website.
+    - Based on the lastest bootstrap
+    - Includes the following partials:
+    In HTML head
+        - seo.liquid - Manage all SEO tags
+        - analytics.liquid - Manage all analytics tags
+    In HTML body
+        - header.liquid - Manage the NavBarMenu
+        - hero.liquid - Manage the hero section with carousel and call to action
+        - breadcrumb.liquid - Manage the breadcrumb navigation
+        - footer.liquid - Manage the footer links
+        - scripts.liquid - Manage all scripts
+{%- endcomment -%}
+
 {%- assign language = page.language | default: site.language | default: "en" -%}
+{%- assign stylesheet = "/assets/styles/main.css" | absolute_url -%}
+
 <!doctype html>
 <html 
     lang="{{ language }}" 
@@ -10,31 +27,44 @@
             content="width=device-width, initial-scale=1">
         
         {% if jekyll.environment == 'production' %}
+        <!-- SEO -->
         {%- include seo.liquid -%}
         {% endif %}
 
         <!-- Style -->
-        <link rel="stylesheet" type="text/css" href="{{ "/assets/styles/main.css" | absolute_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ stylesheet }}">
         
         {% if jekyll.environment == 'production' %}
+        <!-- Analytics -->
         {%- include analytics.liquid -%}
         {% endif %}
         
     </head>
     <body>
         <a href="#main" class="visually-hidden">Skip to main content</a>
+
         <!-- Header -->
         {%- include header.liquid -%}
+
+        <!-- Hero -->
+        {%- include hero.liquid -%}
+
         <!-- Content -->
         <main class="container">
+            {%-  if page.hero == false -%}
+            {%- if page.title -%}
             <!-- Page Title -->
             <H1 class="pt-5">{{ page.title }}</H1>
+            {%- endif -%}
             <!-- Breadcrumbs -->
             {% include breadcrumb.liquid %}
+            {%- endif -%}
             {{ content }}
         </main>
+
         <!-- Footer -->
         {%- include footer.liquid -%}
+        
         <!-- Scripts -->
         {%- include scripts.liquid -%}
     </body>

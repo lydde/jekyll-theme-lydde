@@ -1,0 +1,22 @@
+{% comment %}
+    Display the menu from the configuration file (site or data) if it exists
+    Overwise, display the default menu based on the page hierarchy
+{% endcomment %}
+{%- if site.data.menu -%}
+    {% comment %}
+        Ignore
+    {% endcomment %}
+{%- else -%}
+    {%- assign paths = site.pages |  map: "path" | sort -%}
+    {%- for path in paths %}
+        {%- assign item = site.pages | where: "path", path | first -%}
+        {%- if item.title and item.layout == "page" -%}
+            {%- assign levels = item.url | split: '/' -%}
+            {{ path }} - {{levels.size}}
+            {%- for level in levels -%}
+
+            {%- endfor -%}
+
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}

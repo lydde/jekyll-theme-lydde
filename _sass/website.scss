@@ -7,21 +7,74 @@
  */
 
 /*
-    Apply to Theme
+ *
+ *  Default Website structure
+ *  header - Manage the Navigation
+ *  hero - Manage the hero section with carousel and call to action
+ *  breadcrumb - Manage the breadcrumb navigation
+ *  footer - Manage the footer links
+ *
 */
-#header {
+//
+// Header
+//
+#header 
+{
     @extend .border-bottom;
     @extend .text-muted;
 }
-#header > div {
+#header > div 
+{
     @extend .container;
 }
-
-#header-main {
+#header-main 
+{
     @extend .navbar;
     @extend .navbar-expand-lg;
 }
+//
+// Hero
+//
+#hero 
+{
+    @extend .position-relative;
+    @extend .bg-primary;
+    overflow: hidden;
+    z-index: 0;
+    height: 640px;
+}
+#hero .background 
+{
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity:0.8;
+}
+#hero-content
+{
+    @extend .container;
+    @extend .position-absolute;
+    @extend .top-50;
+    @extend .start-50;
+    @extend .translate-middle;
 
+    z-index: 2;
+    background:rgba(255, 255, 255, 0.8);
+    padding:5rem;
+    border:1px solid rgba(255, 255, 255, 0.1);
+    border-radius:5px;
+}
+#hero-content > div 
+{
+    @extend .row;
+    @extend .align-items-center;
+}
+
+//
+// Breadcrumb
+//
 
 /*
     Post

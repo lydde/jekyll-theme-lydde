@@ -1,0 +1,39 @@
+{%- comment -%} 
+    The Hero section is used to display a title, a description and a call to action.
+    It can also display a background image or a video.
+
+    TODO : include a carousel
+{%- endcomment -%}
+{%-  unless page.hero == false -%}
+<section id="hero" {% if layout.splash or page.splash %}class="vh-100"{% endif %}>
+    <!-- Background -->
+{%- if page.trailer -%}
+    <video autoplay muted loop poster="{{ page.image | absolute_url }}" class="background">
+        <source src="{{ page.trailer | absolute_url }}" type="video/mp4">
+    </video>
+{%- elsif page.image -%}
+    <picture>
+        <source srcset="{{ page.image | absolute_url }}">
+        <img src="{{ page.image | absolute_url }}" alt="{{ page.title | escape }}" class="background">
+    </picture>
+{%- else -%}
+    <span class="background">&nbsp;</span>
+{%- endif -%}
+    <!-- Content -->
+    <div id="hero-content">
+        <div>
+            <div class="col">
+                <h1 class="display-1">{{ page.title | default: site.title | default: "Welcome to Symphony theme" | escape }}</h1>
+                <!-- Breadcrumbs -->
+                {%- include breadcrumb.liquid -%}
+                <p class="lead">{{ page.excerpt | default: site.description | default: "Review our documentation to fix issue" | strip_html | escape }}</p>
+            </div>
+            {%- if page.action -%}
+            <div class="col-4 text-center">
+                <a class="btn btn-primary btn-lg" href="{{ page.action.link }}" role="button" title="{{ page.action.title }}">{{ page.action.title }}</a>
+            </div>
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+{%- endunless -%}
