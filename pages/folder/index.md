@@ -1,4 +1,4 @@
 ---
-title: Page in Folder
+title: SubFolder Page
 layout: page
 ---

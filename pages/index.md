@@ -1,4 +1,4 @@
 ---
-title: Minimal index Page
+title: Folder Page
 layout: page
 ---

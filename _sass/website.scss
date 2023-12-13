@@ -71,11 +71,25 @@
     @extend .row;
     @extend .align-items-center;
 }
-
 //
 // Breadcrumb
 //
-
+#breadcrumb > ol
+{
+    @extend .breadcrumb;
+}
+#breadcrumb > ol > li
+{
+    @extend .breadcrumb-item;
+}
+//
+// Main
+//
+body > main 
+{
+    @extend .container;
+    @extend .pt-3;
+}
 /*
     Post
     - header

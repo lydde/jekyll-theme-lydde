@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: "/debug.json"
+---
+{{ site.pages | jsonify }}

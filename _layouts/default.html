@@ -50,17 +50,19 @@
         {%- include hero.liquid -%}
 
         <!-- Content -->
-        <main class="container">
+        {%- unless page.content == "" or page.content == nil -%}
+        <main>
             {%-  if page.hero == false -%}
             {%- if page.title -%}
             <!-- Page Title -->
-            <H1 class="pt-5">{{ page.title }}</H1>
+            <h1 class="pt-2">{{ page.title }}</h1>
             {%- endif -%}
             <!-- Breadcrumbs -->
-            {% include breadcrumb.liquid %}
+            {%- include breadcrumb.liquid -%}
             {%- endif -%}
             {{ content }}
         </main>
+        {%- endunless -%}
 
         <!-- Footer -->
         {%- include footer.liquid -%}
