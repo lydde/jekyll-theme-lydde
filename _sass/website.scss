@@ -143,8 +143,7 @@
 //
 #breadcrumb > ol
 {
-    @extend .breadcrumb;    
-    @extend .breadcrumb-chevron;
+    @extend .breadcrumb;
 }
 #breadcrumb > ol > li
 {
@@ -155,6 +154,24 @@
     @extend .link-body-emphasis;
     @extend .fw-semibold;
     @extend .text-decoration-none;
+}
+//
+// Social
+// 
+.social
+{
+    @extend .nav;
+}
+.social > li
+{
+    @extend .nav-item;
+}
+.social > li > a
+{
+    @extend .nav-link;
+    @extend .link-dark;
+    @extend .link-opacity-50;
+    @extend .link-opacity-100-hover;
 }
 //
 // Main

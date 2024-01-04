@@ -1,16 +1,14 @@
 {% if social -%}
-<ul class="{{include.class |  default: 'social'}}">
-{%- for item in social -%}
-    {%- assign key = item | first -%}
-    {% if social[key].link %}
-    <li>
-        <a 
-            href="{{ social[key].link }}" 
-            title="Follow us on {{ social[key].title | default: key | capitalize }}">
-            <i class="fab fa-{{ key | downcase }}"></i>
-        </a>
-    </li>
-    {% endif %}
-{%- endfor -%}
-</ul>
+  <ul class="social {{ include.class }}">
+    {%- for item in social -%}
+      {%- assign key = item | first -%}
+      {% if social[key].link %}
+        <li>
+          <a href="{{ social[key].link }}" title="Follow us on {{ social[key].title | default: key | capitalize }}">
+            <i class="bi bi-{{ key | downcase }}"></i>
+          </a>
+        </li>
+      {% endif %}
+    {%- endfor -%}
+  </ul>
 {%- endif %}
