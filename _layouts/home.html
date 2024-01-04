@@ -3,4 +3,8 @@ layout: default
 splash: true
 ---
 
-{{ content }}
+{%- unless page.content == "" or page.content == nil -%}
+<section id="page">
+    {{ content }}
+</section>
+{%- endunless -%}

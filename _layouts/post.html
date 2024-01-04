@@ -2,8 +2,8 @@
 layout: default
 ---
 {% assign item = page %}
-<div id="post" class="row">
-    <section class="col-lg-9 mb-2 mb-sm-0 pb-sm-5">
+<section id="post" class="row">
+    <div class="col-lg-9 mb-2 mb-sm-0 pb-sm-5">
         <header>
             <div class="border-bottom py-3 mb-3 row">
                 <div class="col-12 col-sm-6">
@@ -15,14 +15,14 @@ layout: default
 
             </div>
         </header>
-        <main>
-            <article data-bs-spy="scroll" data-bs-target="#tocSpyScroll" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">{{ content }}</article>
-        </main>
+        <article data-bs-spy="scroll" data-bs-target="#tocSpyScroll" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+            {{ content }}
+        </article>
         <footer>
             {%- include post-share.liquid -%}
             {%- include post-author.liquid -%}
         </footer>
-    </section>
+    </div>
     <aside class="col-lg-3">
         <section class="sticky-top pt-3">
             {%- include post-categories.liquid -%}
@@ -30,4 +30,4 @@ layout: default
             {%- include post-toc.liquid title="Content" html=content id="tocScrollSpy" class="nav nav-pills flex-column" item_class="nav-item" anchor_class="nav-link" submenu_class="nav flex-column"  -%}
         </section>
     </aside>
-</div>
+</section>

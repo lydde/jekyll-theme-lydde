@@ -1,0 +1,63 @@
+{% assign pages = site.pages | where_exp: 'page', 'page.title != nil' | where_exp: 'page', 'page.url != "/404.html" and page.url != "/"' | sort: 'path'
+%}
+<div>
+  <ul>
+    {% for page in pages %}
+      {% assign level = page.url | split: '/' | size | minus: 1 %}
+      {% if level == 1 %}
+        {% assign subpages = pages | where_exp: 'subpage', 'subpage.url contains page.url and subpage.url != page.url' %}
+        {% assign size = subpages.size %}
+        <li
+          {% if size > 0 %}
+          class="dropdown"
+          {% endif %}>
+          <a
+            href="{{ page.url }}"
+            {% if size > 0 %}
+            class="dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            {% endif %}>{{ page.title }}</a>
+          {% if size > 0 %}
+            <ul class="dropdown-menu">
+              {% for subpage in subpages %}
+                {% assign level = subpage.url | split: '/' | size | minus: 1 %}
+                {% if level == 2 %}
+                  {% assign lastpages = pages | where_exp: 'lastpage', 'lastpage.url contains subpage.url and lastpage.url != subpage.url' %}
+                  {% assign size = lastpages.size %}
+                  <li
+                    {% if size > 0 %}
+                    class="dropdown dropend"
+                    {% endif %}>
+                    <a
+                      href="{{ subpage.url }}"
+                      {% if size == 0 %}
+                      class="dropdown-item"
+                      {% else %}
+                      class="dropdown-toggle"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      {% endif %}>{{ subpage.title }}</a>
+                    {% if size > 0 %}
+                      <ul class="dropdown-menu">
+                        {% for lastpage in lastpages %}
+                          {% assign level = lastpage.url | split: '/' | size | minus: 1 %}
+                          {% if level == 3 %}
+                            <li>
+                              <a href="{{ lastpage.url }}" class="dropdown-item">{{ lastpage.title }}</a>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

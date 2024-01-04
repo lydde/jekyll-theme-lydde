@@ -27,10 +27,78 @@
 {
     @extend .container;
 }
+#header-top
+{
+
+    @extend .flex-wrap;
+    @extend .d-none;
+    @extend .d-xl-flex;
+}
+#header-top-left
+{
+    @extend .nav;
+    @extend .me-auto;
+}
+#header-top-right
+{
+    @extend .nav;
+}
+#header-top-right > ul
+{
+    @extend .nav;
+    @extend .justify-content-end;
+}
+#header-top-right > ul > li
+{
+    @extend .nav-item;
+}
+#header-top-right > ul > li > a
+{
+    @extend .nav-link;
+}
 #header-main 
 {
     @extend .navbar;
     @extend .navbar-expand-lg;
+}
+#header-main > div 
+{
+    @extend .container-fluid;
+}
+#header-main > #logo > a
+{
+    @extend .navbar-brand;
+}
+
+
+#navbarContent
+{
+    @extend .collapse;
+    @extend .navbar-collapse;
+    @extend .p-2;
+    @extend .pt-5;    
+    @extend .p-lg-0;
+}
+
+#navbarContent > div > ul
+{
+    @extend .navbar-nav;
+    @extend .nav-pills;
+}
+
+#navbarContent > div > ul > li
+{
+    @extend .nav-item;
+}
+#navbarContent > div > ul a
+{
+    @extend .nav-link;
+}
+
+
+#header-bottom
+{
+    @extend .d-lg-none;
 }
 //
 // Hero
@@ -85,7 +153,7 @@
 //
 // Main
 //
-body > main 
+#page, #post
 {
     @extend .container;
     @extend .pt-3;
