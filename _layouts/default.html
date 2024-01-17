@@ -22,25 +22,26 @@
     lang="{{ language }}" 
     data-bs-theme="auto">
     <head>
-        <meta charset="utf-8">
+        <meta 
+            http-equiv="Content-Type" 
+            content="text/html; charset=utf-8" />
         <meta 
             name="viewport"
             content="width=device-width, initial-scale=1">
         
         <title>{{ site.title }} | {{ page.title | default: site.tagline }}</title>
 
-        {% if jekyll.environment == 'production' %}
         <!-- SEO -->
         {%- include seo.liquid -%}
-        {% endif %}
 
         <!-- Style -->
-        <link rel="stylesheet" type="text/css" href="{{ stylesheet }}">
+        <link 
+            rel="stylesheet" 
+            type="text/css" 
+            href="{{ stylesheet }}">
         
-        {% if jekyll.environment == 'production' %}
         <!-- Analytics -->
         {%- include analytics.liquid -%}
-        {% endif %}
         
     </head>
     <body>

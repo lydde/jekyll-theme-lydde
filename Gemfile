@@ -18,11 +18,8 @@ gem "jekyll"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-archives"
   gem "jekyll-github-metadata"
   gem "jekyll-relative-links"
-  gem "jekyll-mentions"
   gem "jekyll-redirect-from"
 end
 

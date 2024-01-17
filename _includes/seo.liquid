@@ -1,14 +1,16 @@
-{%- assign facebook = site.settings.social.facebook| default: site.data.settings.social.facebook -%}
-{%- assign twitter = site.settings.social.twitter| default: site.data.settings.social.twitter -%}
-{%- assign webmaster = site.settings.webmaster| default: site.data.settings.webmaster -%}
+{%- assign facebook = site.data.settings.social.facebook | default: site.settings.social.facebook -%}
+{%- assign twitter = site..data.settings.social.twitter | default: site.settings.social.twitter -%}
+{%- assign webmaster = site.data.settings.webmaster | default: site.settings.webmaster -%}
+{%- assign theme = site.data.settings.theme | default: site.settings.theme -%}
 
 {%- assign title = page.title | default: site.title -%}
 {%- assign description = page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape -%}
 
-{%- assign theme = site.settings.theme | site.data.settings.theme -%}
+
 
 <!-- Page information -->
 <title>{{ site.title }} | {{ page.title | default: site.tagline }}</title>
+
 <meta property="og:title" content="{{ title }}" />
 <meta property="twitter:title" content="{{ title }}" />
 
@@ -23,12 +25,11 @@
 
 <link type="text/plain" rel="author" href="{{ "/humans.txt" | absolute_url }}"/>
 
-<meta name="author" content="{{ site.authors.default.name }}">
 {% if twitter.username %}
 <meta name="twitter:site" content="@{{ twitter.username | remove:'@' }}" />
-{% if page.author.twitter %}
+    {% if page.author.twitter %}
 <meta name="twitter:creator" content="@{{ page.author.twitter | remove:'@' }}" />
-{% endif %}
+    {% endif %}
 {% endif %}
 
 <link rel="canonical" href="{{ page.url | absolute_url }}">

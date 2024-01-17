@@ -1,4 +1,4 @@
-{%- assign analytics = site.data.settings.analytics | default: site.analytics -%}
+{%- assign analytics = site.data.settings.analytics | default: site.settings.analytics -%}
 {% if analytics %}
 <!-- Global Google Site Tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics }}"></script>

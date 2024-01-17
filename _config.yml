@@ -25,6 +25,7 @@
 title: Symphony
 description: "This is a bootstrap 5 theme for Jekyll engine"
 email: your-email@example.com
+author: LYDDE Group
 
 #
 # Brand
@@ -118,16 +119,24 @@ settings:
       link: https://www.twitch.tv/
     youtube:
       link: https://www.youtube.com/channel/UCqhzZEPsQ18xUt0vc1pekCw
-
-
-
+  webmaster:
+    verification:
+      google: XXX
+      bing: XXX
+      alexa: XXX
+      yandex: XXX
+      baidu: XXX
+      facebook: XXX
+  theme:
+    color:
+      primary: #FFFFFF
 #
 # Plugin
 #
 plugins:
   - jekyll-relative-links
   - jekyll-github-metadata  #https://github.com/jekyll/github-metadata
-  - jekyll-redirect-from    #https://github.com/jekyll/jekyll-redirect-from
+  - jekyll-redirect-from
 
 relative_links:
   collections: true
