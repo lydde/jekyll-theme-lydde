@@ -1,18 +1,21 @@
-# Welcome to YAKA Games Jekyll Theme !
+# ---
+# Welcome to LYDDE Group Jekyll Theme!
 # Version : 1.0.0
-#
-# This is a bootstrap 5.3 theme for Jekyll engine
-# This config file is meant for settings that affect your whole site
+# ---
+# This site is a bootstrap 5.3 theme for Jekyll engine
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely edit after that.
 # Others settings are in /_settings/
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# ---
+
 #
-# Theme
+# Build settings
 #
 # theme: jekyll-theme-lydde
+
 #
 # Site
 #
@@ -21,24 +24,41 @@
 #
 title: Symphony
 description: "This is a bootstrap 5 theme for Jekyll engine"
+email: your-email@example.com
+
 #
 # Brand
 #
+# These are used to marketize your brand. If you look in the HTML files,
+# you will see them in the header and the NavMenu.
+#
 logo: "/assets/logo.png"
 favicon: "assets/icons/favicon.ico"
-tagline: A bootstrap 5 theme for Jekyll 
+tagline: A bootstrap 5 theme for Jekyll
+
 #
 # Localization
+#
+# These are used to assist search engine and browser exposing the right language to user.
 #
 timezone: Europe/Paris
 language: en
 locale: en_US
+
 #
 # Hosting
 #
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-permalink: /news/:categories/:year/:month/:day/:title # the subpath of your posts, e.g. /news
+permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
+
+#
+# Collections
+#
+collections:
+  categories:
+    output: false
+    
 #
 # Defaults values
 #
@@ -51,6 +71,13 @@ defaults:
       layout: post
       image: /assets/images/post.jpeg
       author: author-1
+# all categories
+  - scope:
+      path: ""
+      type: categories
+    values:
+      layout: page
+      image: /assets/images/page.jpeg
 # all pages
   - scope:
       path: ""
@@ -97,8 +124,14 @@ settings:
 #
 # Plugin
 #
+plugins:
+  - jekyll-relative-links
+  - jekyll-github-metadata  #https://github.com/jekyll/github-metadata
+  - jekyll-redirect-from    #https://github.com/jekyll/jekyll-redirect-from
+
 relative_links:
   collections: true
+
 #
 # Files excluded
 #

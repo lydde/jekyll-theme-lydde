@@ -1,42 +1,45 @@
 {%- comment -%} 
-        The breadcrumb component is used to show the current page's location in the site hierarchy. 
-        It is based on Bootstrap's breadcrumb component.
-        Each crumb expose the page title (if exist)
+  The breadcrumb component is used to show the current page's location in the site hierarchy. 
+  It is based on Bootstrap's breadcrumb component.
+  Each crumb expose the page title (if exist)
 {%- endcomment -%}
-<nav id="breadcrumb" aria-label="breadcrumb">
-  <ol>
-    <li>
-      <a href="/">
-        <i class="bi bi-house-door-fill"></i>
-        <span class="visually-hidden">Home</span>
-      </a>
-  </li>
-    {%- comment -%} 
-                  Hierarchy-Based Breadcrumbs (a.k.a., Location-Based Breadcrumbs)
-                  The most common type of breadcrumbs that tell users where they are in the site structure and how to get back to the homepage.
-                  For example: Home > Resources > Page 
-            {%- endcomment -%}
-    {%- assign crumbs = page.url | remove: '/index.html' | split: '/' -%}
-    {%- for crumb in crumbs offset: 1 -%}
-      {%- if forloop.last -%}
-        <li class="active" aria-current="page">{{ page.title }}</li>
-      {%- else -%}
-        <li>
-          {%- capture crumb_path -%}
+{%- assign crumbs = page.url | remove: '/index.html' | split: '/' -%}
+{%- assign crumbs_size = crumbs | size -%}
+{% if crumbs_size > 0 %}
+  <nav id="breadcrumb" aria-label="breadcrumb">
+    <ol>
+      <li>
+        <a href="/">
+          <i class="bi bi-house-door-fill"></i>
+          <span class="visually-hidden">Home</span>
+        </a>
+      </li>
+      {%- comment -%} 
+        Hierarchy-Based Breadcrumbs (a.k.a., Location-Based Breadcrumbs)
+        The most common type of breadcrumbs that tell users where they are in the site structure and how to get back to the homepage.
+        For example: Home > Resources > Page 
+      {%- endcomment -%}
+      {%- for crumb in crumbs offset: 1 -%}
+        {%- if forloop.last -%}
+          <li class="active" aria-current="page">{{ page.title }}</li>
+        {%- else -%}
+          <li>
+            {%- capture crumb_path -%}
             {%- assign crumb_limit = forloop.index | plus: 1 -%}
             {%- for crumb in crumbs limit: crumb_limit -%}{{ crumb | append: '/' }}{%- endfor -%}
           {%- endcapture -%}
-          <a href="{{ crumb_path }}">
-            {%- assign aim = site.pages | where: "url", crumb_path | first -%}
-            {{ aim.title }}
-          </a>
-        </li>
-      {%- endif -%}
-    {%- endfor -%}
-  {% comment %} 
-            Attribute-Based Breadcrumbs
-            This is commonly used on ecommerce sites to show what attributes the user has clicked.
-            For example: Home > Shoes > Hiking > Womens 
-      {% endcomment %}
-  </ol>
-</nav>
+            <a href="{{ crumb_path }}">
+              {%- assign aim = site.pages | where: "url", crumb_path | first -%}
+              {{ aim.title }}
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    {% comment %} 
+      Attribute-Based Breadcrumbs
+      This is commonly used on ecommerce sites to show what attributes the user has clicked.
+      For example: Home > Shoes > Hiking > Womens 
+    {% endcomment %}
+    </ol>
+  </nav>
+{% endif %}
