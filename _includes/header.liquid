@@ -19,20 +19,20 @@ The structure is composed of 3 parts:
 
 {%- if page.header != false %}
   <!-- Header -->
-  <header id="header">
+  <header id="page-header">
     <div>
       {%- if social %}
         <!-- Header Top: Social Network -->
-        <div id="header-top">
-          <div id="header-top-left">&nbsp;</div>
-          <div id="header-top-right">
+        <div id="page-header-top">
+          <div id="page-header-top-left">&nbsp;</div>
+          <div id="page-header-top-right">
             {% include social.liquid %}
           </div>
         </div>
       {%- endif %}
 
       <!-- Header Main: Site Menu -->
-      <nav id="header-main">
+      <nav id="page-header-main">
         <div>
           <!-- Logo -->
           <div id="logo">
@@ -102,7 +102,7 @@ The structure is composed of 3 parts:
       </nav>
 
       <!-- Header Bottom -->
-      <div id="header-bottom"></div>
+      <div id="page-header-bottom"></div>
     </div>
   </header>
 {%- endif -%}
