@@ -3,35 +3,34 @@
 {%- assign social = site.settings.social | default: site.data.settings.social -%}
 
 {%- if page.footer != false -%}
-  <footer id="footer" class="border-top text-muted">
-    <div class="container">
+  <footer id="page-footer">
+    <div>
       <!-- Footer Top -->
-      <div id="footer-top"></div>
+      <div id="page-footer-top"></div>
 
       <!-- Footer Main -->
       {% if social or menus %}
-        <div id="footer-main" class="row pt-3 border-bottom">
+        <div id="page-footer-main">
           {% if social %}
             <!-- Social Media -->
-            <div id="social" class="col-sm-12 col-lg-6">
-              <h2 class="h5">Let's Connect</h2>
+            <div id="social">
+              <span>Let's Connect</span>
               <p>Follow us on your favorite platform</p>
               <div>
-                {% include social.liquid class = "pb-3" %}
+                {% include social.liquid %}
               </div>
             </div>
           {% endif %}
           {% if menus %}
             <!-- Links -->
             {%- for menu in menus -%}
-              <div id="{{ menu.title | slugify }}" class="col-lg-3 col-sm-6">
-                <h2 class="h5">{{ menu.title }}</h2>
+              <div id="{{ menu.title | slugify }}" class="footer-menu">
+                <h2>{{ menu.title }}</h2>
                 <div>
-                  <ul class="nav flex-column pb-3">
+                  <ul>
                     {% for item in menu.links %}
-                      <li class="nav-item mb-2">
+                      <li>
                         <a
-                          class="nav-link p-0 text-muted"
                           href="{{ item.link | absolute_url }}"
                           title="{{ menu.title }}: {{ item.title }}">{{ item.title }}</a>
                       </li>
@@ -45,16 +44,20 @@
       {% endif %}
 
       <!-- Footer Bottom: Website information -->
-      <div id="footer-bottom">
-        <div class="row py-3">
-          <div id="copyright" class="col-sm-6">
+      <div id="page-footer-bottom">
+        <div>
+          <div id="copyright">
             <p>&copy; Copyright {{ "now" | date: "%Y" }}{% if company %}
                 - {{ company }}{%- endif -%}
             </p>
           </div>
-          <div id="disclaimer" class="col-sm-6 text-center text-lg-end">
+          <div id="disclaimer">
             <a href="https://lydde.com">
-              <img src="{{ '/assets/lydde.png' | absolute_url }}" alt="{%- if company -%}{{ company }} is {%- endif -%}a subsidiary of LYDDE Group">
+              <img 
+                id="LYDDE-Logo"    
+                src="{{ '/assets/lydde.png' | absolute_url }}" 
+                alt="LYDDE Group Logo" 
+                title="{%- if company -%}{{ company }} is {% endif %}a subsidiary of LYDDE Group">
             </a>
           </div>
         </div>

@@ -181,6 +181,77 @@
     @extend .container;
     @extend .pt-3;
 }
+//
+// Footer
+//
+#page-footer
+{
+    @extend .border-top;
+    @extend .text-muted;
+}
+#page-footer > div
+{
+    @extend .container;
+}
+#page-footer-top
+{
+    @extend .row;
+}
+#page-footer-main
+{
+    @extend .row;
+    @extend .pt-3;
+    @extend .border-bottom;
+}
+#page-footer-main > div
+{
+    @extend .col;
+}
+#page-footer-main .footer-menu
+{
+    @extend .col-lg-3;
+    @extend .col-sm-6;
+}
+#page-footer-main #social
+{
+    @extend .col-lg-6;    
+    @extend .col-sm-12;
+}
+#page-footer-main > div > span, #page-footer-main > div > h2
+{
+    @extend .h5;
+}
+#page-footer-main .footer-menu ul
+{
+    @extend .nav;
+    @extend .flex-column;
+    @extend .pb-3;
+}
+#page-footer-main .footer-menu li
+{
+    @extend .nav-item;
+    @extend .mb-2;
+}
+#page-footer-main .footer-menu a
+{
+    @extend .nav-link;
+    @extend .p-0;
+    @extend .text-muted;
+}
+#page-footer-bottom > div
+{
+    @extend .row;
+    @extend .py-3;
+}
+#page-footer-bottom > div > div
+{
+    @extend .col-sm-6;
+}
+#page-footer-bottom #disclaimer
+{
+    @extend .text-center;
+    @extend .text-lg-end;
+}
 /*
     Post
     - header

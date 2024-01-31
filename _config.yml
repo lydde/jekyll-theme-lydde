@@ -127,9 +127,47 @@ settings:
       yandex: XXX
       baidu: XXX
       facebook: XXX
+# Theme Color and Fonts
   theme:
     color:
-      primary: #FFFFFF
+      primary: #ffa500
+      secondary: #ffbf00
+# Menu links
+  menus:
+    header:
+      - title: Home Menu
+        position: left
+        links:
+        - title: Home
+          link: "/"
+        - title: News
+          link: "/news/"
+      - title: Network
+        location: header
+        links:
+        - title: Studio
+          link: https://yaka.studio
+        - title: Play
+          link: https://yaka.studio
+          icon: 
+    footer:
+      - title: Footer Menu 1
+        links:
+        - title: Link 1
+          link: "/news/"
+        - title: Link 2
+          link: "/news/"
+        - title: Link 3
+          link: https://yaka.studio
+      - title: Footer Menu 2
+        location: footer
+        links:
+        - title: Link 1
+          link: "/news/"
+        - title: Link 2
+          link: "/news/"
+        - title: Link 3
+          link: https://yaka.studio
 #
 # Plugin
 #
