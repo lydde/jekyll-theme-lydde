@@ -100,7 +100,7 @@
     @extend .d-lg-none;
 }
 //
-// Hero
+// Hero Display
 //
 #hero 
 {
@@ -110,6 +110,9 @@
     z-index: 0;
     height: 640px;
 }
+//
+// Hero Visual Content
+//
 #hero .background 
 {
     z-index: 1;
@@ -119,6 +122,9 @@
     object-fit: cover;
     opacity:0.8;
 }
+//
+// Hero Text Content
+//
 #hero-content
 {
     @extend .container;
@@ -137,6 +143,30 @@
 {
     @extend .row;
     @extend .align-items-center;
+}
+#hero-content > div  > div 
+{
+    @extend .col;
+    @extend .align-items-center;
+}
+#hero-information h1
+{
+    @extend .display-1;
+}
+#hero-information p
+{
+    @extend .lead;
+}
+
+#hero-action
+{
+    @extend .text-center;
+}
+#hero-action a
+{
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-lg;
 }
 //
 // Breadcrumb

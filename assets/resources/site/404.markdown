@@ -1,11 +1,7 @@
 ---
-title: OOPS, Page not found
+title: OOPS, Page not found :(
 layout: home
 permalink: "/404.html"
-excerpt: No worry, you can head over to our homepage
+excerpt: The requested page could not be found. No worry, you can head over to our homepage
+footer: false
 ---
-# 404
-
-**OOPS, Page not found :(**
-
-*The requested page could not be found. No worry, you can head over to our homepage*

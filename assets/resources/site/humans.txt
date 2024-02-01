@@ -8,24 +8,25 @@ permalink: "/humans.txt"
 Site: {{ company }}
 {{ site.description }}
 {% if social %}
+
+Social Links
 ***
-Social Information
-    {%- for item in social -%}
-    {%- assign key = item | first -%}
-        {%- if social[key].link -%}
-        {{ social[key].title | default: key | capitalize }}:       {{ social[key].link }}{{ social[key].username }}
-        {% endif %}
-    {%- endfor -%}
+{% for item in social %}
+{%- assign key = item | first -%}
+{%- if social[key].link -%}
+{{ social[key].title | default: key | capitalize }}:    {{ social[key].link }}{{ social[key].username }}
+{% endif %}
+{%- endfor -%}
 {% endif %}
 {% else %}
-This site is not fully setup
-{% endif %}
-***
+This site is not fully setup yet
+{% endif -%}
+
 Technical information
 ***
 Website:        {{ site.url }}
 Last update:    {{ site.time }}
 Standards:      HTML5, CSS3, Javascript
-Components:     Bootstrap 3.5.2, Jekyll
+Components:     Bootstrap, Jekyll
 Software:       GitHub / Visual Studio Code
 Hosting:        GitHub Pages

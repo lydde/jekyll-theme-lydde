@@ -1,7 +1,7 @@
 ---
 title: Cheatsheet
 layout: page
-excerpt: My dummy page with lot of content
+description: My dummy page with lot of content
 url: /demo/url/cheatsheet.html
 author: author-1
 image: /assets/images/news.jpeg

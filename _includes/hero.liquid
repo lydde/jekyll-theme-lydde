@@ -22,15 +22,18 @@
     <!-- Content -->
     <div id="hero-content">
         <div>
-            <div class="col">
-                <h1 class="display-1">{{ page.title | default: site.title | default: "Welcome to Symphony theme" | escape }}</h1>
+            <div id="hero-information">
+                <h1>{{ page.title | site.title | default: "Welcome" | escape }}</h1>
                 <!-- Breadcrumbs -->
                 {%- include breadcrumb.liquid -%}
-                <p class="lead">{{ page.excerpt | default: site.description | default: "Review our documentation to fix issue" | strip_html | escape }}</p>
+                <p>{{ page.description | default: page.excerpt }}</p>
             </div>
             {%- if page.action -%}
-            <div class="col-4 text-center">
-                <a class="btn btn-primary btn-lg" href="{{ page.action.link }}" role="button" title="{{ page.action.title }}">{{ page.action.title }}</a>
+            <div id="hero-action">
+                <a 
+                    href="{{ page.action.link }}" 
+                    role="button" 
+                    title="{{ page.action.title }}">{{ page.action.title }}</a>
             </div>
             {%- endif -%}
         </div>

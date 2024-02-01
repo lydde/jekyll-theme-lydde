@@ -30,7 +30,11 @@
           {%- endcapture -%}
             <a href="{{ crumb_path }}">
               {%- assign aim = site.pages | where: "url", crumb_path | first -%}
+              {% if aim.title %}
               {{ aim.title }}
+              {% else %}
+              {{ crumb | replace: '-', ' ' | capitalize }}
+              {% endif %}
             </a>
           </li>
         {%- endif -%}
