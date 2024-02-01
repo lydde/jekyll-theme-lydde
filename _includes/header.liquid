@@ -1,17 +1,9 @@
 {%- comment -%} 
-<<<<<<< HEAD
 The header is based on Bootstrap 5 Navbar component
 The structure is composed of 3 parts:
 - Header Top: Social Network
 - Header Main: Site Menu
 - Header Bottom: links
-=======
-  The header is based on Bootstrap 5 Navbar component
-  The structure is composed of 3 parts:
-  - Header Top: Social Network
-  - Header Main: Site Menu
-  - Header Bottom: links
->>>>>>> refs/remotes/origin/master
 {%- endcomment -%}
 {%- assign company = authors.default.name | site.title | default: 'Theme' | escape -%}
 {%- assign menus = site.settings.menus.header | default: site.data.settings.menus.header -%}
@@ -71,17 +63,10 @@ The structure is composed of 3 parts:
 
           <!-- Navigation -->
           <div id="navbarContent">
-<<<<<<< HEAD
             {% comment %} 
               Display the menu from the configuration file (site or data) if it exists
               Overwise, display the default menu based on the file structure 
             {% endcomment %}
-=======
-          {% comment %} 
-            Display the menu from the configuration file (site or data) if it exists
-            Overwise, display the default menu based on the file structure 
-          {% endcomment %}
->>>>>>> refs/remotes/origin/master
             {%- if menus -%}
               {% for menu in menus %}
                 <div
@@ -110,7 +95,7 @@ The structure is composed of 3 parts:
                 </div>
               {% endfor %}
             {%- else -%}
-              {% include structure.liquid %}
+              {% include hierachy.liquid %}
             {%- endif -%}
           </div>
         </div>
