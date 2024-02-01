@@ -1,5 +1,7 @@
 ---
 layout: page
+title: Sitemap
+excerpt: Don't wait, explore our amazing content today and discover something new!
 permalink: "/sitemap.html"
 ---
 

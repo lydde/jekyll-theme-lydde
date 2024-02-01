@@ -5,7 +5,7 @@
 {%- endcomment -%}
 {%- assign crumbs = page.url | remove: '/index.html' | split: '/' -%}
 {%- assign crumbs_size = crumbs | size -%}
-{% if crumbs_size > 0 %}
+{% if crumbs_size > 2 %}
   <nav id="breadcrumb" aria-label="breadcrumb">
     <ol>
       <li>
