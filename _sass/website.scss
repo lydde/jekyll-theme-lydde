@@ -206,7 +206,7 @@
 //
 // Main
 //
-#page, #post
+body > main
 {
     @extend .container;
     @extend .pt-3;
@@ -288,3 +288,7 @@
     - main
     - footer
 */
+#post
+{
+
+}

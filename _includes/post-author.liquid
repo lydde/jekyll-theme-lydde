@@ -1,5 +1,14 @@
+{%  comment %}
+  Display author information based on authors directory.
+  Authors can be store in config.yml or authors.yml under _data directory.
+  Usage:
+    {% include author.html author=page.author %}
+    {% include author.html author=page.author format="list" %}
+  Arguments:
+    format - list or card
+{% endcomment %}
 {% assign authors = page.author %}
-{% assign directory = site.authors | default: site.data.authors %}
+{% assign directory = site.data.authors | default: site.authors %}
 {% if directory %}
   {%- if authors.size > 0 -%}
     {%- if include.format == "list" -%}
@@ -44,7 +53,7 @@
                         class="nav-link ps-0 pe-2 fs-5"
                         href="{{ social[key].link }}"
                         title="Follow us on {{ social[key].title | default: key | capitalize }}">
-                        <i class="fab fa-{{ key | downcase }}"></i>
+                        <i class="bi bi-{{ key | downcase }}"></i>
                       </a>
                     </li>
                   {% endif %}

@@ -25,7 +25,40 @@
 title: Symphony
 description: "This is a bootstrap 5 theme for Jekyll engine"
 email: your-email@example.com
+
+#
+# authors
+#
 author: LYDDE Group
+authors:
+  default:
+    name: LYDDE Group
+    email: contact@lydde.com
+    site: https://lydde.com
+  author-1:
+    name: Author 1
+    position: An editor at Blogzine
+    email: contact@yaka.games
+    picture: "/assets/images/avatar1.jpg"
+    social:
+      twitter:
+        username: author-1
+        link: https://twitter.com/
+      github:
+        name: GitHub
+        username: author-1
+        link: https://github.com/author-1
+      linkedin:
+        name: LinkedIn
+        link: https://www.linkedin.com/author-1
+      blog: 
+        link: https://yaka.games
+    description: >
+      Suspendisse vel tellus efficitur, placerat quam ullamcorper, congue velit. 
+      Nullam rhoncus luctus semper. Sed at vestibulum arcu, eu ornare erat. 
+      Nunc nibh elit, egestas eget finibus eget, vestibulum et arcu. Quisque luctus in nisi in dapibus. 
+      Aenean eu nisl ut sapien maximus interdum ut ut ipsum. Nam tortor leo, ultrices dignissim varius a, luctus quis purus. 
+      Nam a sapien sed risus porta aliquet a vitae leo. Fusce bibendum, lectus a pellentesque sollicitudin, risus nisi dictum ante, a eleifend elit eros vitae mauris. Phasellus porttitor, augue eu accumsan vulputate, enim nulla dignissim mauris, eget eleifend sapien sapien vel lectus. Nam ultrices suscipit sapien, vitae facilisis dui volutpat ut. Maecenas id nulla mollis, consectetur nisl tristique, vulputate odio. Sed in auctor arcu. Nullam sit amet lacus quis urna sollicitudin pretium.
 
 #
 # Brand
@@ -168,6 +201,11 @@ settings:
           link: "/news/"
         - title: Link 3
           link: https://yaka.studio
+# Sharing
+  share:
+    twitter: https://twitter.com/share?url=
+    facebook: https://www.facebook.com/sharer/sharer.php?u=
+    linkedin: https://www.linkedin.com/shareArticle?url=
 #
 # Plugin
 #
