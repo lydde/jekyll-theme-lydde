@@ -1,4 +1,4 @@
-{%- assign company = authors.default.name | default: site.title | escape -%}
+{%- assign company = site.authors.default.name | site.data.authors.default.name | default: site.title | escape -%}
 {%- assign menus = site.settings.menus.footer | default: site.data.settings.menus.footer -%}
 {%- assign social = site.settings.social | default: site.data.settings.social -%}
 

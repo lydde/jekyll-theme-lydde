@@ -25,8 +25,10 @@ sitemap: false
 {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}
 {%- if collections -%}
 {% for collection in collections %}
+{% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
+
 <h2>{{ collection.label | capitalize }}</h2>
-  {% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
+
   <ul>
   {% for doc in docs %}
     <li>
