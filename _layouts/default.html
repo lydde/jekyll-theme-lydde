@@ -53,11 +53,18 @@
         {%- include hero.liquid -%}
 
         <!-- Content -->
+        {% if page.layout == "home" or page.layout == "page" or page.layout == "post" %}
         {%- unless page.content == "" or page.content == nil -%}
         <main>
         {{ content }}
         </main>
         {%- endunless -%}
+        {% else %}
+        <main>
+            {{ content }}
+            </main>
+        {% endif %}
+
 
         <!-- Footer -->
         {%- include footer.liquid -%}

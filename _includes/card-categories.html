@@ -1,0 +1,7 @@
+{% if item.categories.size > 0 %}
+<ul class="{{ include.class | default: "nav"}} py-1">
+    {% for category in item.categories %}
+        <li class="nav-item mx-1 badge bg-primary py-2">{{ category }}</li>
+    {% endfor %}
+</ul>
+{% endif %}

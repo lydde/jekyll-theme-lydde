@@ -1,0 +1,46 @@
+---
+layout: page
+---
+<ul 
+    id="pills-tab" 
+    class="row nav row-cols-2 row-cols-md-4"
+    role="tablist">
+    {% for tag in site.tags %}
+    <li 
+        role="presentation"
+        class="nav-item d-grid pb-2">
+        <button
+            id="{{tag | first | slugify | append: '-tab' }}" 
+            data-bs-toggle="pill" 
+            data-bs-target="{{tag | first | slugify | prepend: '#' }}" 
+            type="button" 
+            role="tab"
+            aria-controls="{{tag | first | slugify }}" 
+            aria-selected="true" 
+            class="btn btn-outline-primary text-start position-relative">
+        {{ tag | first | capitalize }}
+        <span
+            class="badge bg-secondary rounded-pill position-absolute top-50 end-0 translate-middle-y mx-3">{{ tag.last.size }}</span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="tab-content" id="pills-tabContent">
+    <article class="tab-pane fade show active" id="default" role="tabpanel" aria-labelledby="default-tab">
+        <h3 class="border-bottom py-2 mb-3">Select a Tags</h3>
+        <div class="row row-cols-1 row-cols-md-3">
+            <p>to see content</p>
+        </div>
+    </article>
+    {% for tag in site.tags %}
+    <article class="tab-pane fade" id="{{ tag | first | slugify }}" role="tabpanel" aria-labelledby="{{ tag | first | slugify }}-tab">
+        <h3 class="border-bottom py-2 mb-3">{{ tag | first | capitalize }}</h3>
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for item in tag.last %}
+            {% include card.liquid %}
+            {% endfor %}
+        </div>
+    </article>
+    {% endfor %}
+</div>
