@@ -53,7 +53,7 @@
         {%- include hero.liquid -%}
 
         <!-- Content -->
-        {% if page.layout == "home" or page.layout == "page" or page.layout == "post" %}
+        {% if page.layout == "default" or page.layout == "home" or page.layout == "page" or page.layout == "post" %}
         {%- unless page.content == "" or page.content == nil -%}
         <main>
         {{ content }}
@@ -62,7 +62,7 @@
         {% else %}
         <main>
             {{ content }}
-            </main>
+        </main>
         {% endif %}
 
 
