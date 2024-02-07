@@ -20,7 +20,6 @@
 //
 #page-header 
 {
-    @extend .border-bottom;
     @extend .text-muted;
 }
 #page-header > div 
@@ -29,7 +28,6 @@
 }
 #page-header-top
 {
-
     @extend .flex-wrap;
     @extend .d-none;
     @extend .d-xl-flex;

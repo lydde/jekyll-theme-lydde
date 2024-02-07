@@ -6,7 +6,7 @@
 {%- endcomment -%}
 
 {%  assign extract = page.excerpt | default: page.content | strip_html | truncatewords: 50 %}
-{%  assign description = page.description | default: extract %}
+{%  assign description = page.description | default: page.excerpt %}
 
 {%  assign splash = layout.splash or page.splash %}
 

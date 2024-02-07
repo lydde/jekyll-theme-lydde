@@ -19,7 +19,7 @@ The structure is composed of 3 parts:
 
 {%- if page.header != false %}
   <!-- Header -->
-  <header id="page-header">
+  <header id="page-header" {% if page.layout == "home" %}class="fixed-top"{% endif %} >
     <div>
       {%- if social %}
         <!-- Header Top: Social Network -->
