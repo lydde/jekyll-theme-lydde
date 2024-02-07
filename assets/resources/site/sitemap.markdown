@@ -7,23 +7,24 @@ sitemap: false
 ---
 
 <!-- Pages -->
-{% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html" and doc.url != "/"' %}
+{% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html"' | where_exp:'doc', 'doc.url != "/"' %}
 
 {%- if pages != empty or pages.size >= 1 -%}
 ## Pages
 <ul>
 {%- for page in pages -%}
-    {%- if page.title -%}
-    <li>
-        <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">{{ page.title }}</a>
-    </li>
-    {%- endif -%}
+  {%- if page.title -%}
+  <li>
+      <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">{{ page.title }}</a>
+  </li>
+  {%- endif -%}
 {%- endfor -%}
 </ul>
 {%- endif -%}
 
 <!-- Collections -->
 {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}
+
 {%- if collections -%}
 {% for collection in collections %}
 {% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
