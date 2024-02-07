@@ -7,8 +7,9 @@ sitemap: false
 ---
 
 <!-- Pages -->
-{% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html"' %}
-{%- if pages -%}
+{% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html" and doc.url != "/"' %}
+
+{%- if pages != empty or pages.size >= 1 -%}
 ## Pages
 <ul>
 {%- for page in pages -%}
@@ -26,9 +27,8 @@ sitemap: false
 {%- if collections -%}
 {% for collection in collections %}
 {% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
-
+{% if docs.size >= 1 %}
 <h2>{{ collection.label | capitalize }}</h2>
-
   <ul>
   {% for doc in docs %}
     <li>
@@ -36,5 +36,6 @@ sitemap: false
     </li>
   {% endfor %}
   </ul>
+{%- endif -%}
 {% endfor %}
 {%- endif -%}
