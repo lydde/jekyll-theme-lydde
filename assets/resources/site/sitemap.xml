@@ -30,7 +30,7 @@ layout: null
 {% endfor %}
 
 <!-- Pages -->
-{% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:"doc","doc.url != '/404.html' and doc.url != '/'" %}
+{% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html"' | where_exp:'doc', 'doc.url != "/"' %}
 {% for page in pages %}
 {% if page.title %}
   <url>
