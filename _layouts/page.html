@@ -5,6 +5,7 @@ layout: default
 {%- include hero.liquid -%}
 
 <!-- Content -->
+{% unless page.layout == 'home' and page.content == '' %}
 <main>
     <div id="page">
         <article id="main-content">
@@ -22,3 +23,4 @@ layout: default
         </article>
     </div>
 </main>
+{% endunless %}
