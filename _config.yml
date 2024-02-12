@@ -82,7 +82,7 @@ locale: en_US
 # Hosting
 #
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "jekyll-lydde-theme" # the subpath of your site, e.g. /blog
 permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
 
 #
