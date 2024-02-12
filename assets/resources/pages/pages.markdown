@@ -1,8 +1,8 @@
 ---
-title: Pages
-permalink: "/pages/"
 layout: pages
-excerpt: All our articles
+title: Pages
+description: All our articles
+permalink: "/articles/"
 image: "/assets/images/pages.jpeg"
 sitemap: false
 ---

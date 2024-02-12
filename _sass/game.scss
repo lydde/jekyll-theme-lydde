@@ -1,0 +1,68 @@
+/*
+ * LYDDE Group - Jekyll & Bootstrap Theme
+ * Copyright 2011-2023 YAKA Game Studio
+ * Copyright 2011-2023 The Bootstrap Authors
+ * Copyright 2011-2023 Twitter, Inc.
+ *
+ * Game Page structure
+ *
+ */
+
+//
+// Game Container
+//
+#game-main
+{
+    @extend .position-relative;
+    @extend .ratio;
+    @extend .ratio-16x9;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+//
+// Game Canvas
+//
+#game-canvas
+{
+    z-index: 0;
+}
+//
+// Game Message
+//
+#game-message
+{
+    @extend .w-50;
+    @extend .h-auto;
+    @extend .d-inline-block;
+    @extend .top-50;
+    @extend .start-50;
+    @extend .translate-middle;
+}
+#game-alert
+{
+    @extend .h-auto;
+}
+#game-loading
+{
+    @extend .text-center;
+    @extend .p-2;
+    @extend .p-md-5;
+
+    z-index: 2;
+    background:rgba(255, 255, 255, 0.8);
+    border:1px solid rgba(255, 255, 255, 0.1);
+    border-radius:5px;
+}
+//
+// Game Footer
+//
+#game-footer
+{
+    @extend .bg-light;
+    @extend .d-grid;
+    @extend .gap-2;
+    @extend .d-md-flex;
+    @extend .justify-content-md-end;
+    @extend .p-2;
+}

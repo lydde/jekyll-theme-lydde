@@ -204,7 +204,7 @@
 //
 // Main
 //
-body > main
+body > #page-content > main
 {
     @extend .container;
     @extend .pt-3;

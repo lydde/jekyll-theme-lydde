@@ -1,4 +1,4 @@
 ---
-title: Folder Page
 layout: page
+title: Folder Page
 ---

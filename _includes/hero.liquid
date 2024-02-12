@@ -5,8 +5,7 @@
     TODO : include a carousel
 {%- endcomment -%}
 
-{%  assign extract = page.content | strip_html | truncatewords: 50 %}
-{%  assign description =  page.description | page.excerpt | default: extract %}
+{%  assign description =  page.description | default: tagline %}
 
 {%  assign hero = layout.hero or page.hero %}
 {%  assign splash = layout.splash or page.splash %}
@@ -33,7 +32,9 @@
                 <h1>{{ page.title | site.title | default: "Welcome" | escape }}</h1>
                 <!-- Breadcrumbs -->
                 {%- include breadcrumb.liquid -%}
+                {% if description != nil %}
                 <p>{{ description }}</p>
+                {% endif %}
             </div>
             {%- if page.action -%}
             <div id="hero-action">

@@ -1,8 +1,8 @@
 ---
-title: Posts
-permalink: "/posts/"
 layout: posts
-excerpt: Information about our World
+title: Posts
+description: Information about our World
+permalink: "/news/"
 image: "/assets/images/posts.jpeg"
 sitemap: false
 ---

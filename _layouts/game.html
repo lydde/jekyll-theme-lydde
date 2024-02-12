@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{%- comment -%} 
+    Layout for in browser gaming
+{%- endcomment -%}
+<main>
+  <div id="game-container">
+    <!-- Game zone-->
+    <div id="game-main" style="background-image: url('{{ page.image | absolute_url }}');">
+      <!-- Game Canvas use to load WEBGL Game -->
+      <canvas id="game-canvas" tabindex="-1" unity-storage="{{ page.unity-storage}}" unity-game="{{ page.unity-game }}"></canvas>
+      <div id="game-message">
+        <!-- Alert -->
+        <div id="game-alert" class="alert" role="alert"></div>
+        <!-- Game Loading dialog -->
+        <div id="game-loading">
+          <p class="fs-1">Loading</p>
+          <div id="game-progress-bar-empty" class="progress" role="progressbar" aria-label="Game loading bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="game-progress-bar-full" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%;">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="game-footer" class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group" role="group" aria-label="Like or Not">
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-hand-thumbs-up-fill"></i></button>
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-hand-thumbs-down-fill"></i></button>
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-heart-fill"></i></button>
+      </div>
+      <div class="btn-group" role="group" aria-label="Send feedback">
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-chat-square-dots-fill"></i></button>
+      </div>
+      <div class="btn-group" role="group" aria-label="Game Control">
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-dpad-fill"></i></button>
+        <button 
+          type="button" 
+          id="game-fullscreen-button"
+          class="btn btn-outline-primary">
+          <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="page">
+    <article id="main-content">
+        <header>
+            {%- if page.title -%}
+            <!-- Page Title -->
+            <h1 class="pt-2">{{ page.title }}</h1>
+            {%- endif -%}
+            <!-- Breadcrumbs -->
+            {%- include breadcrumb.liquid -%}
+        </header>
+        {{ content }}
+    </article>
+  </div>
+</main>

@@ -1,7 +1,7 @@
 ---
-title: Page with image
 layout: page
-excerpt: My dummy post
+title: Page with image
+tagline: My dummy post
 author: author-1
 image: /assets/images/categories.jpeg
 ---

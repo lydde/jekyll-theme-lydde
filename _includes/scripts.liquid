@@ -11,5 +11,10 @@
 <!-- Jekyll Site 1.0.0 -->
 <script src="{{ "/assets/scripts/main.js" | absolute_url }}"
         crossorigin="anonymous"
-        id="jekyll-script">
-</script>
+        id="jekyll-script"></script>
+{% if page.layout == "game" %}
+<!-- Unity WebGL Loader for YAKA Games -->
+<script src="{{ "/assets/scripts/game.loader.js" | absolute_url }}"
+        crossorigin="anonymous"
+        id="unity-script"></script>
+{% endif %}

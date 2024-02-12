@@ -32,7 +32,7 @@
         <title>{{ site.title }} | {{ page.title | default: site.tagline }}</title>
 
         <!-- SEO -->
-        {%- include seo.liquid -%}
+        {% include seo.liquid %}
 
         <!-- Style -->
         <link 
@@ -47,24 +47,13 @@
     <body>
         <a href="#main" class="visually-hidden">Skip to main content</a>
 
+        <!-- Header -->
         {%- include header.liquid -%}
 
-        <!-- Hero -->
-        {%- include hero.liquid -%}
-
         <!-- Content -->
-        {% if page.layout == "default" or page.layout == "home" or page.layout == "page" or page.layout == "post" %}
-        {%- unless page.content == "" or page.content == nil -%}
-        <main>
-        {{ content }}
-        </main>
-        {%- endunless -%}
-        {% else %}
-        <main>
+        <div id="page-content">
             {{ content }}
-        </main>
-        {% endif %}
-
+        </div>
 
         <!-- Footer -->
         {%- include footer.liquid -%}

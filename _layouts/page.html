@@ -1,18 +1,24 @@
 ---
 layout: default
 ---
-<div id="page">
-    <article id="main-content">
-        {%- if page.hero == false -%}
-        <header>
-            {%- if page.title -%}
-            <!-- Page Title -->
-            <h1 class="pt-2">{{ page.title }}</h1>
+<!-- Hero -->
+{%- include hero.liquid -%}
+
+<!-- Content -->
+<main>
+    <div id="page">
+        <article id="main-content">
+            {%- if page.hero == false -%}
+            <header>
+                {%- if page.title -%}
+                <!-- Page Title -->
+                <h1 class="pt-2">{{ page.title }}</h1>
+                {%- endif -%}
+                <!-- Breadcrumbs -->
+                {%- include breadcrumb.liquid -%}
+            </header>
             {%- endif -%}
-            <!-- Breadcrumbs -->
-            {%- include breadcrumb.liquid -%}
-        </header>
-        {%- endif -%}
-        {{ content }}
-    </article>
-</div>
+            {{ content }}
+        </article>
+    </div>
+</main>

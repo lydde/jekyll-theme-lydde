@@ -1,9 +1,9 @@
 ---
-title: SubPage 2
 layout: page
-excerpt: My dummy post
-author: author-1
+title: SubPage 2
 image: /assets/images/categories.jpeg
+tagline: My dummy post
+author: author-1
 ---
 ## Title 2
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas elementum ligula, vel accumsan nulla hendrerit a. Duis viverra at ante pharetra lacinia. Maecenas feugiat arcu felis, id ultricies dolor vehicula eget. Cras quis felis urna. Suspendisse id vestibulum orci. Nulla facilisi. Fusce convallis ut turpis bibendum eleifend.

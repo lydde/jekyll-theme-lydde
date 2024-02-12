@@ -1,4 +1,4 @@
 ---
-title: SubFolder Page
 layout: page
+title: SubFolder Page
 ---

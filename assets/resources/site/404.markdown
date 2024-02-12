@@ -1,7 +1,7 @@
 ---
-title: OOPS, Page not found :(
 layout: home
+title: OOPS, Page not found :(
+description: The requested page could not be found. No worry, you can head over to our homepage
 permalink: "/404.html"
-excerpt: The requested page could not be found. No worry, you can head over to our homepage
 footer: false
 ---

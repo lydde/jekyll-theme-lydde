@@ -1,8 +1,8 @@
 ---
-title: Categories
-permalink: "/categories/"
 layout: categories
-excerpt: Browse content by Topic
+title: Categories
+description: Browse content by Topic
+permalink: "/categories/"
 image: "/assets/images/categories.jpeg"
 sitemap: false
 ---

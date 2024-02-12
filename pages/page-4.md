@@ -1,6 +1,6 @@
 ---
-title: Without header
 layout: page
+title: Without header
 header: false
 ---
 
