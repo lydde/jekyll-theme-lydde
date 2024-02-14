@@ -12,8 +12,7 @@
 #
 
 #
-# Build settings
-#
+# Import Theme
 # theme: jekyll-theme-lydde
 
 #
@@ -82,7 +81,7 @@ locale: en_US
 # Hosting
 #
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "jekyll-lydde-theme" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
 
 #
@@ -209,11 +208,12 @@ settings:
 # Plugin
 #
 plugins:
-  - jekyll-relative-links
+  - jekyll-relative-links   #https://github.com/benbalter/jekyll-relative-links
   - jekyll-github-metadata  #https://github.com/jekyll/github-metadata
-  - jekyll-redirect-from
+  - jekyll-redirect-from    #https://github.com/jekyll/jekyll-redirect-from
 
 relative_links:
+  enabled:     true
   collections: true
 
 #
@@ -221,11 +221,14 @@ relative_links:
 #
 exclude:
   - readme.md
+  - LICENSE
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/
   - Gemfile
   - Gemfile.lock
+  - "*.gem"
+  - "*.gemspec"
   - node_modules/
   - vendor/bundle/
   - vendor/cache/
