@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Page with image
-tagline: My dummy post
+title: 2 - Page with image
+subtitle: My dummy post
 author: author-1
 image: /assets/images/categories.jpeg
 ---

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Minimal Page
+title: 1 - Minimal Page
 hero: false
 ---
 

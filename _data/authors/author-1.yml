@@ -1,0 +1,36 @@
+# Change to your full name.
+name: Author 1
+# Change to your position.
+position: An editor on this Blog
+# Change to your email.
+email: example@domain.com
+# Change to your picture.
+picture: "/assets/images/avatar.jpg"
+# Set your social network for user interaction
+# It will be displayed as the bottom of the posts
+social:
+  # Set your twitter information
+  twitter:
+    # Change to your user name (without @) - Used for ping back
+    username: author-1
+    # Change to your Twitter homepage
+    link: https://twitter.com/author-1
+  # Set your GitHub information
+  github:
+    username: author-1
+    link: https://github.com/author-1
+  # Set your Linkedin information
+  linkedin:
+    name: LinkedIn
+    link: https://www.linkedin.com/author-1
+  # Set your blog information
+  blog: 
+    link: https://domain.com
+  # Set your website
+  site: https://domain.com
+description: >
+  Suspendisse vel tellus efficitur, placerat quam ullamcorper, congue velit. 
+  Nullam rhoncus luctus semper. Sed at vestibulum arcu, eu ornare erat. 
+  Nunc nibh elit, egestas eget finibus eget, vestibulum et arcu. Quisque luctus in nisi in dapibus. 
+  Aenean eu nisl ut sapien maximus interdum ut ut ipsum. Nam tortor leo, ultrices dignissim varius a, luctus quis purus. 
+  Nam a sapien sed risus porta aliquet a vitae leo. Fusce bibendum, lectus a pellentesque sollicitudin, risus nisi dictum ante, a eleifend elit eros vitae mauris. Phasellus porttitor, augue eu accumsan vulputate, enim nulla digni

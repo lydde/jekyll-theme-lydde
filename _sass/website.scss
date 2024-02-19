@@ -149,7 +149,7 @@
 }
 #hero-information h1
 {
-    @extend .display-1;
+    @extend .display-4;
 }
 #hero-information p
 {
@@ -165,6 +165,10 @@
     @extend .btn;
     @extend .btn-primary;
     @extend .btn-lg;
+}
+#hero-action p
+{
+    @extend .lead;
 }
 //
 // Breadcrumb

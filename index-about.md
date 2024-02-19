@@ -1,4 +1,4 @@
 ---
-title: Root Page
 layout: page
+title: Root Page
 ---

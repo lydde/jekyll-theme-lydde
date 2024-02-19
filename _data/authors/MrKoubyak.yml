@@ -1,0 +1,36 @@
+# Change to your full name.
+name: Laurent LEFEVRE
+# Change to your position.
+position: Producer
+# Change to your email.
+email: laurent@yaka.games
+# Change to your picture.
+picture: "/assets/images/koubyak.jpeg"
+# Set your social network for user interaction
+# It will be displayed as the bottom of the posts
+social:
+  # Set your twitter information
+  twitter:
+    # Change to your user name (without @) - Used for ping back
+    username: MrKoubyak
+    # Change to your Twitter homepage
+    link: https://twitter.com/MrKoubyak
+  # Set your GitHub information
+  github:
+    name: GitHub
+    username: MrKoubyak
+    link: https://github.com/MrKoubyak
+  # Set your Linkedin information
+  linkedin:
+    name: LinkedIn
+    link: https://www.linkedin.com/in/laurent-lefevre-officiel/
+  # Set your blog information
+  blog: 
+    link: https://domain.com
+  # Set your website
+  site: https://about.me/llefevre
+description: >
+  I'm a Microsoft employee, working on Technology Strategy for large Enterprise account.
+  I focus on industry business trends and explain how you can leverage Azure Game Stack & Xbox services.
+
+  I assume that I don't know anything. This is a great habit to do a full knowledge refresh and avoiding bias.

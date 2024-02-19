@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cheatsheet
+title: 3 - Cheatsheet
 description: My dummy page with lot of content
 author: author-1
 image: /assets/images/news.jpeg

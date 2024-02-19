@@ -5,12 +5,11 @@
     TODO : include a carousel
 {%- endcomment -%}
 
-{%  assign description =  page.description | default: tagline %}
+{%  assign description =  page.description | default: page.subtitle %}
 
-{%  assign hero = layout.hero or page.hero %}
-{%  assign splash = layout.splash or page.splash %}
-
-{%-  unless hero -%}
+{%  assign hero = layout.hero | default: page.hero %}
+{%  assign splash = layout.splash | default: page.splash %}
+{%-  if hero == true or hero == nil -%}
 <section id="hero" {% if splash %}class="vh-100"{% endif %}>
     <!-- Background -->
 {%- if page.trailer -%}
@@ -38,6 +37,7 @@
             </div>
             {%- if page.action -%}
             <div id="hero-action">
+                <p>{{ page.action.description }}</p>
                 <a 
                     href="{{ page.action.link }}" 
                     role="button" 
@@ -47,4 +47,4 @@
         </div>
     </div>
 </section>
-{%- endunless -%}
+        {%- endif -%}

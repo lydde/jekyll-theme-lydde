@@ -34,3 +34,6 @@ permalink: "/site.webmanifest"
   {%- endif -%}
   "display": "standalone"
 }
+
+
+

@@ -1,7 +1,14 @@
 ---
 layout: home
 title: OOPS, Page not found :(
-description: The requested page could not be found. No worry, you can head over to our homepage
+description: The requested page could not be found.
 permalink: "/404.html"
+action:
+  title: homepage
+  link: "/"
+  description: No worry, you can head over to our
 footer: false
+redirect_from:
+  - /norobots/
+  - /assets/
 ---

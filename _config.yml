@@ -1,7 +1,7 @@
-# ---
-# Welcome to LYDDE Group Jekyll Theme!
+#
+# Welcome to LYDDE Group Website system
 # Version : 1.0.0
-# ---
+#
 # This site is a bootstrap 5.3 theme for Jekyll engine
 # This config file is meant for settings that affect your whole site, values
 # which you are expected to set up once and rarely edit after that.
@@ -12,51 +12,43 @@
 #
 
 #
-# Import Theme
+# Theme
+#
+# Theme can be used from GEM Package or from GitHub Repos
+# Default and recommanded usage is to rely on GitHub, to get latest version, even unpublished on GEM
+# If you rely on GEM, uncomment theme and comment remote_theme
+#
 # theme: jekyll-theme-lydde
+# remote_theme: lydde/jekyll-lydde-theme
 
 #
-# Site
+# Localization
 #
+# These are used to assist search engine and browser exposing the right language to user.
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
+#
+language: en # The language of the webpage
+locale: en_US # The language of the webpage
+timezone: Europe/Paris # Your website timezone
+
+#
+# Hosting
+#
+url: "" # the base hostname & protocol for your site, e.g. https://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
+
+# 
+# Site
+# 
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 #
-title: Symphony
-description: "This is a bootstrap 5 theme for Jekyll engine"
-
-#
-# authors
-#
-author: LYDDE Group
-authors:
-  default:
-    name: LYDDE Group
-    email: contact@lydde.com
-    site: https://lydde.com
-  author-1:
-    name: Author 1
-    position: An editor at Blogzine
-    email: contact@yaka.games
-    picture: "/assets/images/avatar1.jpg"
-    social:
-      twitter:
-        username: author-1
-        link: https://twitter.com/
-      github:
-        name: GitHub
-        username: author-1
-        link: https://github.com/author-1
-      linkedin:
-        name: LinkedIn
-        link: https://www.linkedin.com/author-1
-      blog: 
-        link: https://yaka.games
-    description: >
-      Suspendisse vel tellus efficitur, placerat quam ullamcorper, congue velit. 
-      Nullam rhoncus luctus semper. Sed at vestibulum arcu, eu ornare erat. 
-      Nunc nibh elit, egestas eget finibus eget, vestibulum et arcu. Quisque luctus in nisi in dapibus. 
-      Aenean eu nisl ut sapien maximus interdum ut ut ipsum. Nam tortor leo, ultrices dignissim varius a, luctus quis purus. 
-      Nam a sapien sed risus porta aliquet a vitae leo. Fusce bibendum, lectus a pellentesque sollicitudin, risus nisi dictum ante, a eleifend elit eros vitae mauris. Phasellus porttitor, augue eu accumsan vulputate, enim nulla dignissim mauris, eget eleifend sapien sapien vel lectus. Nam ultrices suscipit sapien, vitae facilisis dui volutpat ut. Maecenas id nulla mollis, consectetur nisl tristique, vulputate odio. Sed in auctor arcu. Nullam sit amet lacus quis urna sollicitudin pretium.
+title: LYDDE Theme for Jekyll # Your website title (must be less than 50 char for SEO)
+tagline: This is a bootstrap 5 theme for Jekyll engine # Used in Title (should be limited to 50 char for SEO)
+description: >- # used by SEO meta description and in feed.xml
+  A minimal, responsive and feature-rich Jekyll theme based on Bootstrap 5.
 
 #
 # Brand
@@ -66,29 +58,12 @@ authors:
 #
 logo: "/assets/logo.png"
 favicon: "assets/icons/favicon.ico"
-tagline: A bootstrap 5 theme for Jekyll
-
-#
-# Localization
-#
-# These are used to assist search engine and browser exposing the right language to user.
-#
-timezone: Europe/Paris
-language: en
-locale: en_US
-
-#
-# Hosting
-#
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
-permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
 
 #
 # Collections
 #
 collections:
-  categories:
+  authors:
     output: false
     
 #
@@ -97,19 +72,12 @@ collections:
 defaults:
 # all posts
   - scope:
-      path: ""
+      path: "_posts" # An empty string here means all files in the project
       type: posts
     values:
       layout: post
       image: /assets/images/post.jpeg
-      author: author-1
-# all categories
-  - scope:
-      path: ""
-      type: categories
-    values:
-      layout: page
-      image: /assets/images/page.jpeg
+      author: default
 # all pages
   - scope:
       path: ""
@@ -117,93 +85,14 @@ defaults:
     values:
       layout: page
       image: /assets/images/page.jpeg
+
 #
-# Theme Settings
+# SASS
 #
-settings:
-# Google Analytics
-  analytics: XXXXX
-# Social Networks Information
-  social:
-    twitter:
-      name: Twitter
-      username: yakagamestudio
-      link: https://twitter.com/yakagamestudio
-      image: image-twitter.png
-      card: summary
-    facebook:
-      name: Facebook
-      username: yakagamestudio
-      link: https://facebook.com/yakagamestudio
-    instagram:
-      name: Instagram
-      username: yakagamestudio
-      link: https://instagram.com/yakagamestudio
-    linkedin:
-      name: LinkedIn
-      link: https://www.linkedin.com/showcase/yakagamestudio
-    pinterest:
-      username: YAKAGameStudio
-      link: https://www.pinterest.fr/
-    twitch:
-      username: yakagamestudio
-      link: https://www.twitch.tv/
-    youtube:
-      link: https://www.youtube.com/channel/UCqhzZEPsQ18xUt0vc1pekCw
-  webmaster:
-    verification:
-      google: XXX
-      bing: XXX
-      alexa: XXX
-      yandex: XXX
-      baidu: XXX
-      facebook: XXX
-# Theme Color and Fonts
-  theme:
-    color:
-      primary: #ffa500
-      secondary: #ffbf00
-# Menu links
-  menus:
-    header:
-      - title: Home Menu
-        position: left
-        links:
-        - title: Home
-          link: "/"
-        - title: News
-          link: "/news/"
-      - title: Network
-        location: header
-        links:
-        - title: Studio
-          link: https://yaka.studio
-        - title: Play
-          link: https://yaka.studio
-          icon: 
-    footer:
-      - title: Footer Menu 1
-        links:
-        - title: Link 1
-          link: "/news/"
-        - title: Link 2
-          link: "/news/"
-        - title: Link 3
-          link: https://yaka.studio
-      - title: Footer Menu 2
-        location: footer
-        links:
-        - title: Link 1
-          link: "/news/"
-        - title: Link 2
-          link: "/news/"
-        - title: Link 3
-          link: https://yaka.studio
-# Sharing
-  share:
-    twitter: https://twitter.com/share?url=
-    facebook: https://www.facebook.com/sharer/sharer.php?u=
-    linkedin: https://www.linkedin.com/shareArticle?url=
+sass:
+  style: compressed
+
+
 #
 # Plugin
 #
@@ -211,10 +100,26 @@ plugins:
   - jekyll-relative-links   #https://github.com/benbalter/jekyll-relative-links
   - jekyll-github-metadata  #https://github.com/jekyll/github-metadata
   - jekyll-redirect-from    #https://github.com/jekyll/jekyll-redirect-from
+  #- jekyll-archives        #https://github.com/jekyll/jekyll-archives
 
+#
+# Plugin settings
+#
 relative_links:
   enabled:     true
   collections: true
+
+compress_html: # Details on https://jch.penibelst.de/
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+#redirect_from:
+#  json: false
 
 #
 # Files excluded
