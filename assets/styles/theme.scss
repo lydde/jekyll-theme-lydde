@@ -1,0 +1,53 @@
+---
+# LYDDE Group - Jekyll & Bootstrap Theme
+# Version 1.0.0
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+//
+// Color system
+//
+{% assign color = site.data.settings.theme.color | default: site.settings.theme.color %}
+
+{% if color.primary %}
+$primary: {{ color.primary }};
+{% endif %}
+{% if color.secondary %}
+$secondary: {{ color.secondary }};
+{% endif %}
+{% if color.background %}
+$body-bg: {{ color.background }};
+{% endif %}
+{% if color.text %}
+$body-color: {{ site.data.settings.theme.color.text | default: site.settings.theme.color.text }};
+{% endif %}
+
+//
+// Bootstrap components
+//
+$breadcrumb-divider: quote(">");
+
+//
+// Fonts
+//
+{% assign font = site.data.settings.theme.font | default: site.settings.theme.font %}
+{% if font.import %}
+$web-font-path: "{{ font.import }}";
+@import url($web-font-path);
+{% if font.text %}
+$font-family-base: "{{ font.text }}", sans-serif;
+{% endif %}
+{% if font.headings %}
+$headings-font-family: "{{ font.headings }}", sans-serif;
+{% endif %}
+{% endif %}
+
+//
+// Jekyll-Lydde-Theme
+//
+@import "main.scss";
+
+//
+// Append your custom styles bellox
+//

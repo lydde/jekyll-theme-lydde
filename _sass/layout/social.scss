@@ -1,0 +1,18 @@
+//
+// Social
+// 
+.social
+{
+    @extend .nav;
+}
+.social > li
+{
+    @extend .nav-item;
+}
+.social > li > a
+{
+    @extend .nav-link;
+    @extend .link-dark;
+    @extend .link-opacity-50;
+    @extend .link-opacity-100-hover;
+}

@@ -1,0 +1,17 @@
+//
+// Breadcrumb
+//
+#breadcrumb > ol
+{
+    @extend .breadcrumb;
+}
+#breadcrumb > ol > li
+{
+    @extend .breadcrumb-item;
+}
+#breadcrumb a
+{
+    @extend .link-body-emphasis;
+    @extend .fw-semibold;
+    @extend .text-decoration-none;
+}

@@ -4,7 +4,7 @@ layout: default
 <!-- Hero -->
 {%- include hero.liquid -%}
 <!-- Content -->
-{% if page.content != '' %}
+{% if page.content != '' or page.layout == 'pages' or page.layout == 'posts' or page.layout == 'tags' %}
 <main>
     <div id="page">
         <article id="main-content">

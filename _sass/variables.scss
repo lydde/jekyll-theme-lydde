@@ -8,23 +8,4 @@
  *
  */
 
-//
-// Color system
-//
-$primary: #6f42c1;
-$secondary: #ffc107;
 
-//
-// Bootstrap components
-//
-$breadcrumb-divider: quote(">");
-
-
-//
-// Fonts
-//
-$web-font-path: "https://fonts.googleapis.com/css2?family=Basic&family=Jockey+One&display=swap";
-@import url($web-font-path);
-
-$font-family-base: 'Basic', sans-serif;
-$headings-font-family: 'Jockey One', sans-serif;

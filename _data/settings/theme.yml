@@ -1,0 +1,10 @@
+# Theme
+color:
+  primary: "#18A689"
+  secondary: "#888888"
+  background: "#fff"
+  text: "#111"
+font:
+  import: "https://fonts.googleapis.com/css2?family=Basic&family=Jockey+One&display=swap"
+  headings: "Jockey One"
+  text: "Basic"

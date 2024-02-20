@@ -59,6 +59,22 @@ description: >- # used by SEO meta description and in feed.xml
 logo: "/assets/logo.png"
 favicon: "assets/icons/favicon.ico"
 
+settings:
+  webmaster:
+    analytics:
+      google: XXXX
+  theme:
+    color:
+      primary: "#6f42c1"
+      secondary: "#000000"
+      background: "#000000"
+      text: "#111"
+    font:
+      import: "https://fonts.googleapis.com/css2?family=Basic&family=Jockey+One&display=swap"
+      headings: "Jockey One"
+      text: "Basic"
+
+
 #
 # Collections
 #
@@ -98,7 +114,7 @@ sass:
 #
 plugins:
   - jekyll-relative-links   #https://github.com/benbalter/jekyll-relative-links
-  - jekyll-github-metadata  #https://github.com/jekyll/github-metadata
+  #- jekyll-github-metadata  #https://github.com/jekyll/github-metadata
   - jekyll-redirect-from    #https://github.com/jekyll/jekyll-redirect-from
   #- jekyll-archives        #https://github.com/jekyll/jekyll-archives
 

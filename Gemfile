@@ -14,7 +14,7 @@ gem "jekyll"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-github-metadata"
+  #gem "jekyll-github-metadata"
   gem "jekyll-relative-links"
   gem "jekyll-redirect-from"
   gem "faraday-retry"
