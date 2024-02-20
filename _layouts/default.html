@@ -32,6 +32,8 @@ layout: compress
             name="viewport"
             content="width=device-width, initial-scale=1">
         
+        {%- include analytics.liquid -%}
+        
         <title>{{ site.title }} | {{ page.title | default: site.tagline }}</title>
 
         <!-- SEO -->
@@ -43,8 +45,7 @@ layout: compress
             type="text/css" 
             href="{{ stylesheet }}">
         
-        <!-- Analytics -->
-        {%- include analytics.liquid -%}
+
         
     </head>
     <body>
