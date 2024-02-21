@@ -16,11 +16,29 @@ $primary: {{ color.primary }};
 {% if color.secondary %}
 $secondary: {{ color.secondary }};
 {% endif %}
-{% if color.background %}
-$body-bg: {{ color.background }};
+{% if color.info %}
+$info: {{ color.info }};
 {% endif %}
-{% if color.text %}
-$body-color: {{ site.data.settings.theme.color.text | default: site.settings.theme.color.text }};
+{% if color.success %}
+$success: {{ color.success }};
+{% endif %}
+{% if color.danger %}
+$danger: {{ color.danger }};
+{% endif %}
+{% if color.warning %}
+$warning: {{ color.warning }};
+{% endif %}
+{% if color.light %}
+$light: {{ color.light }};
+{% endif %}
+{% if color.dark %}
+$dark: {{ color.dark }};
+{% endif %}
+{% if color.white %}
+$white: {{ color.white }};
+{% endif %}
+{% if color.black %}
+$black: {{ color.black }};
 {% endif %}
 
 //

@@ -63,17 +63,6 @@ settings:
   webmaster:
     analytics:
       google: XXXX
-  theme:
-    color:
-      primary: "#6f42c1"
-      secondary: "#000000"
-      background: "#000000"
-      text: "#111"
-    font:
-      import: "https://fonts.googleapis.com/css2?family=Basic&family=Jockey+One&display=swap"
-      headings: "Jockey One"
-      text: "Basic"
-
 
 #
 # Collections
