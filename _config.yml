@@ -1,5 +1,5 @@
-#
 # Welcome to LYDDE Group Website system
+# Create on ERKS.IA WebFactory
 # Version : 1.0.0
 #
 # This site is a bootstrap 5.3 theme for Jekyll engine
@@ -35,13 +35,14 @@ timezone: Europe/Paris # Your website timezone
 #
 # Hosting
 #
-url: "" # the base hostname & protocol for your site, e.g. https://example.com
+url: "" # the base hostname & protocol for your site, e.g. https://example.com or https://[your GitHub username].github.io
 baseurl: "" # the subpath of your site, e.g. /blog
+repository: "lydde/academicpages.github.io" # the github repository-
 permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
 
-# 
+#
 # Site
-# 
+#
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 #
@@ -70,12 +71,12 @@ settings:
 collections:
   authors:
     output: false
-    
+
 #
 # Defaults values
 #
 defaults:
-# all posts
+  # all posts
   - scope:
       path: "_posts" # An empty string here means all files in the project
       type: posts
@@ -83,7 +84,7 @@ defaults:
       layout: post
       image: /assets/images/post.jpeg
       author: default
-# all pages
+  # all pages
   - scope:
       path: ""
       type: pages
@@ -97,21 +98,20 @@ defaults:
 sass:
   style: compressed
 
-
 #
 # Plugin
 #
 plugins:
-  - jekyll-relative-links   #https://github.com/benbalter/jekyll-relative-links
+  - jekyll-relative-links #https://github.com/benbalter/jekyll-relative-links
   #- jekyll-github-metadata  #https://github.com/jekyll/github-metadata
-  - jekyll-redirect-from    #https://github.com/jekyll/jekyll-redirect-from
+  - jekyll-redirect-from #https://github.com/jekyll/jekyll-redirect-from
   #- jekyll-archives        #https://github.com/jekyll/jekyll-archives
 
 #
 # Plugin settings
 #
 relative_links:
-  enabled:     true
+  enabled: true
   collections: true
 
 compress_html: # Details on https://jch.penibelst.de/
@@ -129,9 +129,13 @@ compress_html: # Details on https://jch.penibelst.de/
 #
 # Files excluded
 #
+include:
+  - .htaccess
+  - _pages
+  - files
 exclude:
-  - readme.md
-  - LICENSE
+  - .vscode/
+  - .github/
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/
@@ -140,7 +144,10 @@ exclude:
   - "*.gem"
   - "*.gemspec"
   - node_modules/
+  - vendor
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - readme.md
+  - LICENSE
