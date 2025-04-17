@@ -1,12 +1,12 @@
 # Lydde Group - Full Boostrap 5.3 Theme for Jekyll
-Theme for LYDDE Group GitHub Sites based on Jekyll & Bootstrap 5
+Theme for LYDDE Group Sites based on Jekyll & Bootstrap 5
 
 ## Installation
 Add this line to your site's `_config.yml`:
 
 ```
 # Jekyl Theme
-remote_theme: YAKAGameStudio/Symphony
+remote_theme: lydde/jekyll-lydde-theme
 ```
 
 ## Content
