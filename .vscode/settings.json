@@ -5,15 +5,9 @@
     "files.associations": {
         "*.html": "liquid"
     },
-    "[markdown]": {
-        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-    },
     // Formatter
     "[html][liquid]": {
-        "editor.defaultFormatter": "Shopify.theme-check-vscode"
-    },
-    "[shellscript]": {
-        "editor.defaultFormatter": "mkhl.shfmt"
+        "editor.defaultFormatter": "Shopify.liquid-prettier"
     },
     // Disable vscode built-in stylelint
     "css.validate": false,
