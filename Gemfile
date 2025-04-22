@@ -7,8 +7,9 @@ source "https://rubygems.org"
 # To install & execute this website run:
 #     bundle exec jekyll serve
 
+gemspec
 # Define Jekyll version requested (default to 4.3.2 if not set)
-gem "jekyll"
+gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"]
 
 # This is the default theme for our Jekyll sites.
 # Uncomment if using a custom theme
@@ -17,7 +18,8 @@ gem "jekyll"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   # Uncomment if using GitHub Pages metadata
-  # gem "jekyll-github-metadata"
+  gem "jekyll-github-metadata"
+  gem "jekyll-relative-links"
 
   # Syntax highlighting for code blocks
   gem "rouge"
@@ -27,7 +29,7 @@ group :jekyll_plugins do
 end
 
 # GitHub Pages gem (includes specific versions of Jekyll and plugins)
-gem "github-pages"
+#gem "github-pages"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
