@@ -1,0 +1,19 @@
+{% assign pages = site.pages 
+  | where_exp:'page', 'page.title != nil' 
+  | where_exp:'page','page.sitemap != false' 
+  | where_exp:'page','page.url != "/404.html"' 
+  | where_exp:'page', 'page.url != "/"' 
+  | sort: 'path' %}
+
+{%- if pages != empty -%}
+<div>
+  <ul>
+  {% for page in pages %} 
+      {% assign depth = page.url | split: '/' | size | minus: 1 %}
+      {% if depth == 1 %}
+        {% include header-hierarchy-item.liquid root=page %}
+      {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+{%- endif -%}

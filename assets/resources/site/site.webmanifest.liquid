@@ -1,0 +1,32 @@
+---
+layout: null
+permalink: "/site.webmanifest"
+---
+{%- assign company = site.data.authors.default.name | default: site.authors.default.name | escape -%}
+{%- assign language = page.language | default: site.language | default: "en" -%}
+{%- assign direction = page.direction | default: site.direction | default: "auto" -%}
+{%- assign theme = site.settings.theme -%}
+{
+  "name": "{{ site.title }}",
+  "short_name": "{{ company }}",
+  "description": "{{ site.description }}",
+  "start_url": "{{ site.url }}",
+  "dir": "{{ direction }}",
+  "lang": "{{ site.language }}",
+  "icons": [
+    {
+      "src": "{{"/assets/icons/android-chrome-192x192.png" | absolute_url }}",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "{{"/assets/icons/android-chrome-512x512.png" | absolute_url }}",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  {%- if theme.color.primary -%}"theme_color": "{{ theme.color.primary }}",{%- endif -%}
+  {%- if theme.color.background -%}"background_color": "{{ theme.color.background }}",{%- endif -%}
+  "display": "standalone"
+}

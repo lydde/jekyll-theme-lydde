@@ -1,0 +1,47 @@
+{% assign root     = include.root %}
+{% assign depth    = root.url | split: "/" | size | minus: 1 %}
+{% assign child_depth = depth | plus: 1 %}
+
+{%- comment -%}
+  1. Filter pages that are under this root
+  2. Exclude the root itself
+  3. Only keep those whose depth == child_depth
+{%- endcomment -%}
+
+{% assign children = "" | split: "" %}
+{% for c in pages %}
+  {% assign c_depth = c.url | split: "/" | size | minus: 1 %}
+  {% if c.url != root.url and c.url contains root.url and c_depth == child_depth %}
+    {% assign children = children | push: c %}
+  {% endif %}
+{% endfor %}
+
+<li
+  {% if children != empty %}
+  class="dropdown"
+  {% endif %}
+  >
+  <a
+    {% if children != empty %}
+    class="dropdown-toggle"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    {% endif %}
+    href="{{ root.url }}"
+    title="{{ root.title }}">
+    {{ root.title }}
+  </a>
+  
+  {% if children != empty %}
+    <ul 
+      class="dropdown-menu">
+      {% for c in children %}
+        
+        {% include header-hierarchy-item.liquid root=c %}
+
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</li>

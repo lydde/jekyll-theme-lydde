@@ -1,5 +1,5 @@
 # Lydde Group - Full Boostrap 5.3 Theme for Jekyll
-Theme for LYDDE Group Sites based on Jekyll & Bootstrap 5
+Theme for LYDDE Group websites based on Jekyll & Bootstrap 5
 
 ## Installation
 Add this line to your site's `_config.yml`:

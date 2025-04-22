@@ -3,7 +3,7 @@ layout: compress
 ---
 {%- comment -%} 
     Default layout for all pages in the website.
-    - Based on the lastest bootstrap
+    - Based on the latest Bootstrap
     - Includes the following partials:
     In HTML head
         - seo.liquid - Manage all SEO tags
@@ -17,12 +17,14 @@ layout: compress
 {%- endcomment -%}
 
 {%- assign language = page.language | default: site.language | default: "en" -%}
+{%- assign direction = page.direction | default: site.direction | default: "ltr" -%}
 {%- assign stylesheet = "/assets/styles/theme.css" | absolute_url -%}
 
 <!doctype html>
 <html 
     xmlns="http://www.w3.org/1999/xhtml"
     lang="{{ language }}" 
+    dir="{{ direction }}"
     data-bs-theme="auto">
     <head>
         <meta 
@@ -34,22 +36,20 @@ layout: compress
         
         {%- include analytics.liquid -%}
         
-        <title>{{ site.title }} | {{ page.title | default: site.tagline }}</title>
+        <title>{{ site.title | default: "Website" }} | {{ page.title | default: site.tagline }}</title>
 
         <!-- SEO -->
         {% include seo.liquid %}
 
         <!-- Style -->
         <link 
-            rel="stylesheet" 
-            type="text/css" 
+            rel="stylesheet"
             href="{{ stylesheet }}">
         
-
         
     </head>
     <body>
-        <a href="#main" class="visually-hidden">Skip to main content</a>
+        <a href="#main" class="visually-hidden" aria-label="Skip directly to main the content">Skip to main content</a>
 
         <!-- Header -->
         {%- include header.liquid -%}

@@ -5,11 +5,13 @@ The structure is composed of 3 parts:
 - Header Main: Site Menu
 - Header Bottom: links
 {%- endcomment -%}
+
 {%- assign company = authors.default.name | site.title | default: 'Theme' | escape -%}
 {%- assign menus = site.settings.menus.header | default: site.data.settings.menus.header -%}
 {%- assign social = site.settings.social | default: site.data.settings.social -%}
 
 {%- assign logo = site.logo | default: "/assets/logo.png" -%}
+{%- assign logoExist = false -%}
 {%- for files in site.static_files -%}
   {%- if files.path == logo -%}
     {%- assign logoExist = true -%}
@@ -26,7 +28,7 @@ The structure is composed of 3 parts:
         <div id="page-header-top">
           <div id="page-header-top-left">&nbsp;</div>
           <div id="page-header-top-right">
-            {% include social.liquid %}
+            {% include "social.liquid" %}
           </div>
         </div>
       {%- endif %}
@@ -42,7 +44,7 @@ The structure is composed of 3 parts:
               title="{{ company }}"
               rel="author">
               {%- if logoExist -%}
-                <img src="{{ logo | absolute_url }}" alt="{{ company }}">
+                <img src="{{ logo | absolute_url }}" alt="{{ company | default: 'Site Logo' }}">
               {%- else -%}
                 {{ company }}
               {%- endif -%}
@@ -65,7 +67,7 @@ The structure is composed of 3 parts:
           <div id="navbarContent">
             {% comment %} 
               Display the menu from the configuration file (site or data) if it exists
-              Overwise, display the default menu based on the file structure 
+              Otherwise, display the default menu based on the file structure 
             {% endcomment %}
             {%- if menus -%}
               {% for menu in menus %}
@@ -95,7 +97,7 @@ The structure is composed of 3 parts:
                 </div>
               {% endfor %}
             {%- else -%}
-              {% include hierachy.liquid %}
+              {%- include header-hierarchy.liquid -%}
             {%- endif -%}
           </div>
         </div>

@@ -19,7 +19,7 @@
 # If you rely on GEM, uncomment theme and comment remote_theme
 #
 # theme: jekyll-theme-lydde
-# remote_theme: lydde/jekyll-lydde-theme
+# remote_theme: lydde/jekyll-theme-lydde
 
 #
 # Localization
@@ -37,7 +37,7 @@ timezone: Europe/Paris # Your website timezone
 #
 url: "" # the base hostname & protocol for your site, e.g. https://example.com or https://[your GitHub username].github.io
 baseurl: "" # the subpath of your site, e.g. /blog
-repository: "lydde/academicpages.github.io" # the github repository-
+repository: "lydde/demo.github.io" # the github repository-
 permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
 
 #

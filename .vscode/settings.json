@@ -7,7 +7,7 @@
     },
     // Formatter
     "[html][liquid]": {
-        "editor.defaultFormatter": "Shopify.liquid-prettier"
+        "editor.defaultFormatter": "sissel.shopify-liquid"
     },
     // Disable vscode built-in stylelint
     "css.validate": false,
